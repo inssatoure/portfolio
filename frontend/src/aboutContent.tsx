@@ -12,7 +12,7 @@ export const aboutContent = {
   testimonials: [
     {
       quote:
-        "For over +12 years, Issa Touré has helped build digital bridges between Africa and the rest of the world. Through strategy, execution, and bold creativity, he brings tech, culture, and entrepreneurship together to solve problems that matter. From Dakar to Amsterdam, from local artisans to global organizations — Issa’s work is about making things work. Digitally. Inclusively. Sustainably.",
+        "For over +12 years, Issa Touré has helped build digital bridges between Africa and the rest of the world. Through strategy, execution, and bold creativity, he brings tech, culture, and entrepreneurship together to solve problems that matter. From Dakar to Amsterdam, from local artisans to global organizations — Issa's work is about making things work. Digitally. Inclusively. Sustainably.",
 
       shortName: 'Exprt',
 
@@ -24,11 +24,11 @@ export const aboutContent = {
     },
     {
       quote:
-        "I have managed project in Belgium Benin Canada DRC Ethiopia France Gambia Italy Ivory Coast Mali Netherlands Niger Senegal and Togo",
-      name: 'JP Ramirez',
+        "Issa has successfully managed projects and missions in:\n\n🇧🇪 Belgium\n🇧🇯 Benin\n🇨🇦 Canada\n🇨🇩 Democratic Republic of the Congo (DRC)\n🇪🇹 Ethiopia\n🇫🇷 France\n🇬🇲 The Gambia\n🇮🇹 Italy\n🇨🇮 Ivory Coast (Côte d'Ivoire)\n🇲🇱 Mali\n🇳🇱 Netherlands\n🇳🇪 Niger\n🇸🇳 Senegal\n🇹🇬 Togo",
+      name: 'Impacts',
       shortName: 'ABROAD MISSIONS',
       title: [
-        'Project Manager',
+        'And many more',
       ],
       headshot: jpImage,
     },
@@ -42,34 +42,29 @@ export const aboutContent = {
   ],
   skills: [
     `
-      9 years working with
-      best-in-class designers building award-winning projects
+      turning digital dreams into reality across countries
+      because the future of Africa deserves world-class innovation
     `,
     `
-      strong command of design systems. excellent
-      at interpreting mockups in any form (adobe, figma,
-      whatev) and working with minimal OR maximal direction
+      deep understanding of African tech ecosystems.
+      successfully scaled platforms like Prilance to thousands of freelancers
     `,
     `
-      exceptional at visual
-      styling and attention to
-      detail.  whatever tool it
-      takes: CSS, SCSS/PostCSS,
-      Tailwind, animation,
-      2D & 3D rendering...
+      driven by impact and inclusion.
+      expert in designing platforms for employment, digital access,
+      and social change in underserved communities
     `,
     `
-      expert communication &
-      project management.
-      leading up, down, and laterally. transforming chaos into launches
+      strategic leadership in complex multi-stakeholder environments:
+      NGOs, incubators, govs, startups, and international institutions
     `,
     `
-      full stack & at the cutting edge. this site is built with React/NextJS,
-      Typescript, Sanity, Three.js/R3F, GLSL, and a laundry list more
+      builds digital tools that work: freelancing, e-learning,
+      digital governance, cultural heritage, AI, and financial inclusion
     `,
     `
-      always accessible, functional, responsive, compatible,
-      performant and search engine optimized
+      fluent in storytelling, public speaking, and ecosystem building.
+      always clear, always local, always global
     `,
   ],
 };

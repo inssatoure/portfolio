@@ -42,7 +42,7 @@ module.exports = {
     fontFamily: {
       mono: '"Roboto Mono", monospace',
       sans: '"Roboto", sans-serif',
-      display: '"Setal", Comic Sans MS',
+      display: '"Issa", Comic Sans MS',
     },
   },
 

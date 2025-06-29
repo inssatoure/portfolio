@@ -23,9 +23,9 @@ function MyApp({ Component, pageProps }: AppProps) {
   //   console.log('focused on', e.target);
   // });
 
-  const title = 'Setal, Développeur Web Créatif';
+  const title = 'Issa, Développeur Web Créatif';
 const description = 'Portfolio de développeur web créatif';
-const url = 'https://setal.dev';
+const url = 'https://issatoure.com';
 
   return (
     <>
@@ -40,17 +40,17 @@ const url = 'https://setal.dev';
           type: 'website',
           images: [
             {
-              url: 'https://setal.dev/images/social.png',
+              url: 'https://issatoure.com/images/social.png',
           width: 1200,
           height: 630,
-          alt: 'Portfolio de Setal - Développeur Web Créatif',
+          alt: 'Portfolio de Issa - Développeur Web Créatif',
           type: 'image/png',
             },
           ],
-          site_name: 'setal.dev',
+          site_name: 'issatoure.com',
         }}
         twitter={{
-          handle: '@setal_dev',
+          handle: '@issatoure',
           cardType: 'summary_large_image',
         }}
       />

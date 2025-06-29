@@ -15,14 +15,14 @@ const DynamicThreeCanvas = dynamic(() => import('./ThreeCanvas'), {
 export const ThreePage = ({ siteData }:{siteData:SiteData}) => (
   <>
     <Head>
-      <title>Setal Portfolio</title>
-      <meta name="description" content="Portfolio de Setal - Développeur Web Créatif" />
+      <title>Issa Portfolio</title>
+      <meta name="description" content="Portfolio de Issa - Développeur Web Créatif" />
       <link rel="icon" href="/images/favicon.png" />
     </Head>
     <main className="w-screen h-[calc(100*var(--vh))] font-sans overflow-hidden">
       <ForBotsOnly>
         <>
-          <h1>Setal Portfolio</h1>
+          <h1>Issa Portfolio</h1>
           {aboutContent.intro.map((par) => <p key={par}>{par}</p>)}
           <h2>About</h2>
           <h3>Mission</h3>

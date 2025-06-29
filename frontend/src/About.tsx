@@ -25,7 +25,7 @@ import { aboutContent } from './aboutContent';
 
 
 const inssaGif = '/videos/inssa.gif';
-const haileyImage = '/images/hailey2.jpg';
+const haileyImage = '/images/toure.png';
 
 export const Slides = ({
   slide, setScene, setSlide,
@@ -135,7 +135,7 @@ export const Slides = ({
       >
         <ImageWindow
           delay={100}
-          title="HAILEY.jpg"
+          title="WUKONG.PNG"
           topColor="violet"
           positions={['60% 15%']}
           className={`
@@ -153,7 +153,7 @@ export const Slides = ({
             ${slide === 'testimonials' ? '' : 'translate-x-[-70%] translate-y-[-10%]'}
           `}
           srcs={[haileyImage]}
-          alts={['My dog Hailey smiling her crazy smile.']}
+          alts={["Issa's caricature portrait, smiling in a suit."]}
         />
 
         <TestimonialsWindow

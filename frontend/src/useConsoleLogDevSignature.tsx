@@ -11,7 +11,7 @@ export const useConsoleLogDevSignature = () => {
     log('looking at my code, are you?');
     log('awesome! dig around!');
     log('Although you\'ll probably have more luck looking at the repo:');
-    console.log('%chttps://github.com/setal-dev/portfolio-site', sizeStyle);
+    console.log('%chttps://github.com/issatoure/portfolio-site', sizeStyle);
     log('hmu to nerd out about any of it!');
     log('hello@issatoure.com');
   }, 1000);
