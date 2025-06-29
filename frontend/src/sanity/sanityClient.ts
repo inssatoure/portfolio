@@ -1,10 +1,5 @@
 // import fetch from 'node-fetch';
-import { createClient as createExperimentalTypesafeClient } from 'sanity-codegen';
 import createClient from '@sanity/client';
-
-
-// eslint-disable-next-line import/no-relative-packages
-import { Documents } from '../../generatedSanitySchemaTypes';
 
 const clientConfig = {
   projectId: process.env.SANITY_PROJECT_ID ?? '',
@@ -22,12 +17,6 @@ const authorizedClientConfig = {
 export const authorizedSanityClient = createClient(authorizedClientConfig);
 export const safeSanityClient = createClient(clientConfig);
 
-// @ts-ignore
-// eslint-disable-next-line max-len
-export const authorizedSanityExperimentalTypesafeClient = createExperimentalTypesafeClient<Documents>({
-  ...authorizedClientConfig,
-  // @ts-ignore
-  fetch,
-});
+
 
 // console.log('SANITY_PROJECT_ID:', process.env.SANITY_PROJECT_ID);

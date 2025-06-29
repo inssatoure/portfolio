@@ -7,10 +7,36 @@ import {
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { TypedObject } from '@portabletext/types';
 import Vimeo from '@u-wave/react-vimeo';
-import { SanityImageAsset, SanityReference } from 'sanity-codegen';
 import { SanityImageSource } from '@sanity/image-url/lib/types/types';
 import { event } from 'nextjs-google-analytics';
-import { ImageFigure, Project } from '../generatedSanitySchemaTypes';
+import { SanityImageAsset, SanityReference } from '@sanity/client';
+
+// Define a basic Project interface if it's no longer imported from generated types
+interface Project {
+  _type: string;
+  title?: string;
+  shortTitle?: string;
+  slug?: { _type: string; current: string };
+  subTitle?: string;
+  client?: string;
+  designers?: Array<{
+    _type: string;
+    name?: string;
+    url?: string;
+  }>;
+  links?: Array<{
+    _type: string;
+    text?: string;
+    url?: string;
+  }>;
+  body?: any; // Use 'any' or define a more specific type if available
+}
+
+interface ImageFigure {
+  _type: string;
+  image?: { asset: SanityReference<SanityImageAsset> };
+  alt?: string;
+}
 import { getSanityImageUrlFor } from './sanity/sanityImageBuilder';
 import { CustomCursorHover, CustomCursorState } from './CustomCursor';
 import ExternalLinkIconSvg from './svg/ExternalLinkIconSvg';
@@ -101,7 +127,7 @@ const QuoteBlock = ({ value }: {
     title: string;
     quote: string;
     headshot: {
-      asset: SanityReference<SanityImageAsset>;
+      asset: SanityReference;
     };
   };
 }) => (
@@ -186,7 +212,7 @@ export const ProjectHeader = ({ project }: { project: Project; }) => (
 export const ProjectBody = ({ project }: { project: Project; }) => useMemo(() => (
   <div className="my-8 tracking-wide">
     <PortableText
-      value={((project?.body ?? {}) as TypedObject)}
+      value={project?.body as TypedObject}
       components={{
         marks: {
           link: LinkMark,

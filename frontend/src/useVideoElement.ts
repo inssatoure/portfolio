@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { isPlaying } from './isPlaying';
 
 const debugContainerId = 'brs-video-element-debug';
 
@@ -105,7 +106,7 @@ export const useVideoElement = (
     if (!videoElement) return;
     if (!canPlay) return;
     if (playing) {
-      // if (!isPlaying(videoElement)) return;
+      if (!isPlaying(videoElement)) return;
       videoElement.play();
     } else {
       videoElement.pause();
