@@ -23,9 +23,9 @@ function MyApp({ Component, pageProps }: AppProps) {
   //   console.log('focused on', e.target);
   // });
 
-  const title = 'Bryant Smith, Creative Dev';
-  const description = 'I help awesome designers (like you) build their wildest dreams.';
-  const url = 'https://bryantcodes.art';
+  const title = 'Setal, Développeur Web Créatif';
+const description = 'Portfolio de développeur web créatif';
+const url = 'https://setal.dev';
 
   return (
     <>
@@ -40,17 +40,17 @@ function MyApp({ Component, pageProps }: AppProps) {
           type: 'website',
           images: [
             {
-              url: 'https://bryantcodes.art/images/social.png',
-              width: 2333,
-              height: 1313,
-              alt: 'Bryantcodes.art wordmark over colorful, crudely scribbled illustration of laptop displaying another crudely drawn illustration of a laptop.',
-              type: 'image/png',
+              url: 'https://setal.dev/images/social.png',
+          width: 1200,
+          height: 630,
+          alt: 'Portfolio de Setal - Développeur Web Créatif',
+          type: 'image/png',
             },
           ],
-          site_name: 'bryantcodes.art',
+          site_name: 'setal.dev',
         }}
         twitter={{
-          handle: '@bryantcodesart',
+          handle: '@setal_dev',
           cardType: 'summary_large_image',
         }}
       />

@@ -27,7 +27,7 @@ export const getStaticProps:GetStaticProps<Props, Params> = async (context) => {
 
 export const getStaticPaths:GetStaticPaths = async () => {
   const paths = sceneNames
-    .filter((scene:SceneName) => scene !== 'projects')
+    .filter((scene:SceneName) => scene !== 'projects' && scene !== 'project-open')
     .map((scene:SceneName) => ({ params: { scene } }));
 
   return {

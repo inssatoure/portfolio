@@ -1,4 +1,5 @@
 import React, { useMemo, useRef, useState } from 'react';
+
 import { useFrame } from '@react-three/fiber';
 import { Cylinder } from '@react-three/drei';
 import * as THREE from 'three';
@@ -45,7 +46,7 @@ const TEXT_LINES = [
   '<TurboEncabulator><Amulite prefabulated /><HydrocopticMarzelvanes count={6} /><Panendermic /><Panendermic semiboloid /></TurboEncabulator>',
   'rm -rf node_modules && npm install && npm run build && npm run hope && npm start',
   '// I hope github copilot will finish this part...',
-  '<AllWorkAndNoPlayMakesBryantADullBoy /><AllWorkAndNoPlayMakesBryantADullBoy /><AllWorkAndNoPlayMakesBryantADullBoy /><AllWorkAndNoPlayMakesBryantADullBoy />',
+  '<AllWorkAndNoPlayMakesSetalADullBoy /><AllWorkAndNoPlayMakesSetalADullBoy /><AllWorkAndNoPlayMakesSetalADullBoy /><AllWorkAndNoPlayMakesSetalADullBoy />',
   'useOnMyDeath(()=>{ eraseBrowserHistoryOnAllDevices(); doItAgainJustToBeSure(); tripleCheck(); youKnowWhatMaybeJustIncinerateTheHardDrives(); }); ',
   'const debugInterval = setInterval(()=>{if(prompt(\'Program still working?\')==="nope") throw new Error("bug.");}, 100);',
   '<Burrito spicy={100}>{toppings.map((tProps:{name:string,spicy:number,isHotsauce:boolean,vegan:boolean})=>(<Topping {...(tprops)} key={name} />)}</Burrito>',

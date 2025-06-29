@@ -21,7 +21,7 @@ export const useImgElement = (
     } else {
       img.onload = loaded;
     }
-  }, []);
+  }, [img]);
 
   return { img, isLoaded };
 };

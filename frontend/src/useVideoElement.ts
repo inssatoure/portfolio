@@ -99,7 +99,7 @@ export const useVideoElement = (
     return () => {
       destroyVideoElement({ videoElement: vid, setCanPlay });
     };
-  }, [options.debug, url]);
+  }, [options.debug, url, setCanPlay, videoId]);
 
   useEffect(() => {
     if (!videoElement) return;

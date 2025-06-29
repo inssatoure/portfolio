@@ -1,11 +1,11 @@
 {
   "root": true,
   "project": {
-    "name": "bryantcodesart"
+    "name": "setal-portfolio"
   },
   "api": {
-    "projectId": "0ttnaq4a",
-    "dataset": "dev"
+    "projectId": "uc6vwtkn",
+    "dataset": "production"
   },
   "plugins": [
     "@sanity/base",

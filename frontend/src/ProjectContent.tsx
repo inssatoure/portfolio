@@ -15,6 +15,7 @@ import { getSanityImageUrlFor } from './sanity/sanityImageBuilder';
 import { CustomCursorHover, CustomCursorState } from './CustomCursor';
 import ExternalLinkIconSvg from './svg/ExternalLinkIconSvg';
 import { contactHref } from './contactHref';
+import { CONTACT_CTA_TEXT } from './textConstants';
 
 const ExternalLink = ({
   href, cursor = 'external', children, onClick = () => {},
@@ -212,10 +213,7 @@ export const ProjectCTA = ({ slug }:{slug:string}) => (
     <H2>Questions?</H2>
     <P className="mb-8">
       {`
-        Wanna nerd out and talk shop?
-        Have a project of your own you wanna discuss?
-        Just wanna say hi and introduce yourself?
-        I'd love to hear from you!
+        ${CONTACT_CTA_TEXT}
       `}
     </P>
     <ExternalLink
@@ -228,7 +226,7 @@ export const ProjectCTA = ({ slug }:{slug:string}) => (
         });
       }}
     >
-      hello @ bryantcodes.art
+      issa@issatoure.com
 
     </ExternalLink>
   </div>

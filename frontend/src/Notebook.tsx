@@ -50,6 +50,7 @@ export function Notebook({ ...groupProps }:GroupProps) {
         curved
         nPointsInCurve={700}
       />
+
       <Text
         position={[0, 0, 0.1]}
         rotation={[0, 0, 0]}
@@ -57,10 +58,10 @@ export function Notebook({ ...groupProps }:GroupProps) {
         anchorX="center"
         anchorY="middle"
         fontSize={0.25}
-        font={fontUrls.bryantBold}
+        font={fontUrls.setalBold}
         visible={linesVisible}
       >
-        {'Blog\ncoming\nsoon'.toUpperCase()}
+        {'The\nideas lab'.toUpperCase()}
       </Text>
     </animated.group>
   );

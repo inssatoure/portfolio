@@ -7,8 +7,8 @@ export const usePlayAllVideosOnClickInLowPowerMode = () => {
   useEffect(() => {
     let testVideo:HTMLVideoElement|null = document.createElement('video');
     testVideo.muted = true;
-    testVideo.play().catch((err) => {
-      console.warn('Low power mode detected via error', err);
+    testVideo.play().catch((_err) => {
+      // console.warn('Low power mode detected via error', err);
       setLowPowerMode(true);
       testVideo?.remove();
       testVideo = null;

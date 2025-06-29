@@ -2,6 +2,7 @@ import { useFrame } from '@react-three/fiber';
 import React, {
   useRef, useState,
 } from 'react';
+
 import { MathUtils, PerspectiveCamera } from 'three';
 import { useEventListener, useWindowSize } from 'usehooks-ts';
 import { Html } from '@react-three/drei';
@@ -21,8 +22,10 @@ import colors from './colors';
 // import { AwardsWindow } from './AwardsWindow';
 import { TerminalWindowButton } from './TerminalWindowButton';
 import { aboutContent } from './aboutContent';
-import selfPortraitImage from '../public/images/self-portrait.jpg';
-import haileyImage from '../public/images/hailey2.jpg';
+
+
+const inssaGif = '/videos/inssa.gif';
+const haileyImage = '/images/hailey2.jpg';
 
 export const Slides = ({
   slide, setScene, setSlide,
@@ -59,7 +62,7 @@ export const Slides = ({
             className="text-[max(1.5em,16px)]"
             tabIndex={scene === 'menu' ? 0 : -1}
           >
-            ABOUT_BRYANT
+            About Issa
           </TerminalButton>
         </div>
       </div>
@@ -78,7 +81,7 @@ export const Slides = ({
         `}
         >
           <TextWindow
-            title="BRYANT_SMITH.exe"
+            title="Issa_toure.AI"
             className={`
             relative self-baseline
             ${breakpoints.about ? '' : `
@@ -102,7 +105,7 @@ export const Slides = ({
           />
           <ImageWindow
             delay={300}
-            title="SELF_CONCEPT.jpg"
+            title="IMPACT_PEOPLE.EXE"
             positions={['center']}
             topColor="yellow"
             className={`
@@ -117,8 +120,8 @@ export const Slides = ({
             transition-transform duration-[1s]
             ${slide === 'mission' ? '' : 'translate-x-[20%] translate-y-[70%]'}
           `}
-            srcs={[selfPortraitImage]}
-            alts={['Crayon illustration of Bryant from decades ago.']}
+            srcs={[inssaGif]}
+            alts={['Illustration de Issa']}
           />
         </div>
       )}
@@ -161,7 +164,7 @@ export const Slides = ({
             ${breakpoint ? 'self-baseline' : 'col-[1/-1] row-[1/-1] self-end'}
           `}
           delay={1000}
-          title="KIND_WORDS_FROM_OTHERS.exe"
+          title="+12 years experience in digital transformation"
           color={colors.lime}
           topColor={colors.cyan}
         >

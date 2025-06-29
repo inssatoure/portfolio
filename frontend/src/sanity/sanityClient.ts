@@ -1,6 +1,8 @@
 // import fetch from 'node-fetch';
 import { createClient as createExperimentalTypesafeClient } from 'sanity-codegen';
 import createClient from '@sanity/client';
+
+
 // eslint-disable-next-line import/no-relative-packages
 import { Documents } from '../../generatedSanitySchemaTypes';
 
@@ -27,3 +29,5 @@ export const authorizedSanityExperimentalTypesafeClient = createExperimentalType
   // @ts-ignore
   fetch,
 });
+
+// console.log('SANITY_PROJECT_ID:', process.env.SANITY_PROJECT_ID);

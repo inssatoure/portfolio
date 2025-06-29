@@ -1,0 +1,1 @@
+export const CONTACT_CTA_TEXT = 'from Dakar';

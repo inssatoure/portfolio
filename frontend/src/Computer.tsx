@@ -155,7 +155,7 @@ export function Computer() {
         anchorX="center"
         anchorY="middle"
         fontSize={0.5}
-        font={fontUrls.bryantBold}
+        font={fontUrls.setalBold}
         material={textMaterial}
         renderOrder={3}
         visible={computerCanBeTurnedOn && !computerTurningOn && !computerOn && !computerWillTurnOn}

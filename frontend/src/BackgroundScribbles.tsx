@@ -13,7 +13,7 @@ export function BackgroundScribbles() {
 
   return (
     <>
-      {/* <Scribble
+      <Scribble
         points={(squiggle1Points as CoordArray[])}
         size={30}
         position={[-4, -0.5, -4]}
@@ -23,7 +23,8 @@ export function BackgroundScribbles() {
         rotation={[0, Math.PI, Math.PI]}
         visible={squiggle1Visible}
         curved
-        nPointsInCurve={700} />
+        nPointsInCurve={700}
+      />
       <Scribble
         points={(squiggleCirclePoints as CoordArray[])}
         size={15}
@@ -33,7 +34,8 @@ export function BackgroundScribbles() {
         rotation={[0, Math.PI, Math.PI]}
         visible={squiggle2Visible}
         curved
-        nPointsInCurve={300} /> */}
+        nPointsInCurve={300}
+      />
       <Scribble
         points={(squiggle1Points as CoordArray[])}
         size={130}

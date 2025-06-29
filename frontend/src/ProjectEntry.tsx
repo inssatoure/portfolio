@@ -185,6 +185,23 @@ export const ProjectEntry = ({
         <animated.group
           position={animatedCubeFloatingOffset}
         >
+          <animated.mesh
+            ref={cubeRef as Ref<Mesh>}
+            position={animatedCubePosition}
+            scale={animatedCubeScale}
+          >
+            <roundedBoxGeometry
+              args={[0.8, 0.8, 0.8, 4, 0.1]}
+              attach="geometry"
+            />
+            <meshStandardMaterial
+              color={colors.cyan}
+              transparent
+              opacity={0.8}
+              roughness={0}
+              metalness={0.5}
+            />
+          </animated.mesh>
           <mesh
             position={[0, 0, -0.2]}
             scale={[1, 1, 0.1]}

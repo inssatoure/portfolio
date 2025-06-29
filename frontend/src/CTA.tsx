@@ -3,30 +3,31 @@ import { useInterval } from 'usehooks-ts';
 import { event } from 'nextjs-google-analytics';
 import { CustomCursorHover, CustomCursorState } from './CustomCursor';
 import { useParamOnLoad } from './useParamOnLoad';
-import { contactHref, linkedInHref, twitterHref } from './contactHref';
+import { contactHref, linkedInHref } from './contactHref';
 import { useSceneController } from './SceneController';
 import MailIconSvg from './svg/MailIconSvg';
 import { useChangingColorPalette } from './useChangingColorPalette';
 import { useDelayedBoolean } from './useDelayedBoolean';
 import LinkedInIconSvg from './svg/LinkedInIconSvg';
-import TwitterIconSvg from './svg/TwitterIconSvg';
+
+import { CONTACT_CTA_TEXT } from './textConstants';
 
 // const availablity = 'available Q4';
 
 const ctas = [
   null,
   null,
-  'avail 4 freelance!',
+  CONTACT_CTA_TEXT,
   null,
   null,
-  'avail 4 freelance!',
+  CONTACT_CTA_TEXT,
   null,
   null,
   'wow so clickable',
   'much convert',
   null,
   null,
-  'avail 4 freelance!',
+  CONTACT_CTA_TEXT,
   null,
   null,
   'this is my CTA',
@@ -182,7 +183,7 @@ export const CTA = () => {
                 <span className="text-[0.7em]">&nbsp;</span>
                 <span>@</span>
                 <span className="text-[0.7em]">&nbsp;</span>
-                bryantcodes.art
+                issatoure.com
               </span>
             )}
           </span>

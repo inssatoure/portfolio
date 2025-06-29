@@ -349,7 +349,7 @@ function multilineText(
     lineHeight: 1.1,
     minFontSize: 20,
     maxFontSize: 100,
-    logFunction: console.log,
+    // logFunction: console.log,
     centerY: false,
     centerX: false,
     nbsp: '&nbsp;',
@@ -378,7 +378,7 @@ function multilineText(
     .split(' ')
     .map((word) => word.trim().replaceAll(' ', '').replaceAll(opts.nbsp, ' '))
     .filter((word) => word !== '');
-  if (opts.verbose) opts.logFunction(`Text contains ${words.length} words`);
+  if (opts.verbose && opts.logFunction) opts.logFunction(`Text contains ${words.length} words`);
 
   let x = opts.rect.x + (opts.centerX ? opts.rect.width / 2 : 0);
   let y = opts.rect.y + opts.minFontSize; // It's the bottom line of the letters
@@ -446,7 +446,7 @@ function multilineText(
     throw new Error('Could not draw with those constraints!');
   }
 
-  if (opts.verbose) opts.logFunction(`Font used: ${ctx.font}`);
+  if (opts.verbose && opts.logFunction) opts.logFunction(`Font used: ${ctx.font}`);
 
   if (opts.centerX) {
     ctx.textAlign = 'center';

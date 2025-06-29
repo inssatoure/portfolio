@@ -1,6 +1,6 @@
-const subject = 'Hello, Bryant!';
-const body = 'I hope this note finds you well. You had such a compelling CTA, I just *had* to click on it!';
+const subject = 'Bonjour, Setal!';
+const body = 'Je vous contacte après avoir visité votre portfolio. Votre travail est très impressionnant!';
 
-export const contactHref = `mailto:hello@bryantcodes.art?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-export const linkedInHref = 'https://www.linkedin.com/in/bryantcodesart/';
-export const twitterHref = 'https://twitter.com/bryantcodesart';
+export const contactHref = `mailto:hello@issatoure.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+export const linkedInHref = 'https://sn.linkedin.com/in/01issatoure';
+export const twitterHref = 'https://twitter.com/setal_dev';

@@ -1,11 +1,11 @@
 {
-  "name": "bryantcodesart",
+  "name": "setal-portfolio",
   "private": true,
   "version": "1.0.0",
   "description": "",
   "main": "package.json",
-  "author": "Bryant Smith <bryant.robert.smith@gmail.com>",
-  "license": "UNLICENSED",
+  "author": "Issa Toure <hello@issatoure.com>",
+    "license": "UNLICENSED",
   "scripts": {
     "start": "sanity start",
     "dev": "sanity start",

@@ -1,9 +1,9 @@
 import type { InferGetStaticPropsType, NextPage } from 'next';
-import { authorizedSanityExperimentalTypesafeClient } from '../src/sanity/sanityClient';
+import { safeSanityClient } from '../src/sanity/sanityClient';
 import { SceneName } from '../src/SceneController';
 
 export async function getStaticProps() {
-  const projects = await authorizedSanityExperimentalTypesafeClient.getAll('project');
+  const projects = await safeSanityClient.fetch('*[_type == "project"]');
   const scene:SceneName = 'intro';
   return {
     props: {

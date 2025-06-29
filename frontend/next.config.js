@@ -9,16 +9,7 @@ const nextConfig = {
     SANITY_DATASET: process.env.SANITY_DATASET,
   },
   optimizeFonts: false,
-  // Add the following redirect configuration
-  async redirects() {
-    return [
-      {
-        source: '/check-in',
-        destination: process.env.CHECKIN_REDIRECT,
-        permanent: false,
-      },
-    ];
-  },
+  // Removed broken redirects configuration
 };
 
 module.exports = nextConfig;

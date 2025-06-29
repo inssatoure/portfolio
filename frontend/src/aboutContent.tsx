@@ -4,34 +4,37 @@ import jpImage from '../public/images/jp.jpg';
 /* eslint-disable no-multiple-empty-lines */
 /* eslint-disable max-len */
 export const aboutContent = {
-  intro: ["I'm Bryant! (he/him)", 'I build web experiences'],
+  intro: ["I'm Issa", "Innovation expert based in West Africa"],
   mission: [
-    'I am a freelance dev who helps awesome designers (like you) build their wildest dreams.',
-    'Together, let\'s create something that stands out––and has your users saying, "woah."',
+    'Hello !',
+    'I am a digital transformation expert and entrepreneur with 10+ years leading large-scale initiatives in Africa. Specializing in digital strategy, financial inclusion, and AI solutions',
   ],
   testimonials: [
     {
       quote:
-        "Bryant's kickass work is complemented by his infectious energy and passion for creating original, exciting work. He is a true creative partner––always bringing new ideas to the table.",
-      shortName: 'Stef',
-      name: 'Stephanie Jung',
+        "For over +12 years, Issa Touré has helped build digital bridges between Africa and the rest of the world. Through strategy, execution, and bold creativity, he brings tech, culture, and entrepreneurship together to solve problems that matter. From Dakar to Amsterdam, from local artisans to global organizations — Issa’s work is about making things work. Digitally. Inclusively. Sustainably.",
+
+      shortName: 'Exprt',
+
       headshot: stefImage,
-      title: ['Brand Design Lead, Employer Marketing at Handshake'],
+      title: [
+         'Not me !',
+         '- Chatgpt said that about me :)',
+       ],
     },
     {
       quote:
-        "Bryant's collaborative mindset and aptitude to explore ideas well beyond the minimum viable product make him an invaluable partner.",
+        "I have managed project in Belgium Benin Canada DRC Ethiopia France Gambia Italy Ivory Coast Mali Netherlands Niger Senegal and Togo",
       name: 'JP Ramirez',
-      shortName: 'JP',
+      shortName: 'ABROAD MISSIONS',
       title: [
-        'Design Manager, Brand Design Strategy at Intuit',
-        'Director, Studio Ramírez',
+        'Project Manager',
       ],
       headshot: jpImage,
     },
     {
       quote:
-        "Bryant's building enables award-winning projects––including FWA Site Of The Day, Webby, 2x Awwwards Honorable Mention, CSSDA Special Kudos, CSSDA Best UI/UX/Innovation, 4x STA100, Type Director's Club, Webby For Good... & more.",
+        "West African Coordinator - Bosch Entrepreneurs Alumnis Network\nJCI Business Hope - 1rst Entrepreneur Prize\nWorld Bank / Adepme BUSINESS ACADEMY AWARDS\nNetherland Trust Funds NTF4 Top Entrepreneurs -\nWorld Entrepreneurship Cup Finalist GEN GLOBAL\nTop 50 Worldwide Entrepreneur EO GlobalStudent Entrepreneurship\nInternational Social ChangeMaker Prize SHOKA and ROBERT\nBOSH STIFTUNG\nMTN / Jumia Entrepreneurship Challenge",
       name: 'The award people',
       shortName: 'Awards',
       headshot: '/images/star-icon.svg',

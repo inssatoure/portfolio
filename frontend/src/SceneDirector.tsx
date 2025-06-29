@@ -38,10 +38,10 @@ export function SceneDirector({
 
   let stagePosition = [-1, 0, 3];
   let stageSize = [15, 15];
-  // if (breakpoints.menu) {
-  //   stageSize = [15, 15];
-  // }
-  if (scene === 'start') {
+  if (breakpoints.menu) {
+    stageSize = [15, 15];
+  }
+  if (scene === 'start' || scene === 'intro') {
     stagePosition = [-1, 0, 3];
     stageSize = [5, 4];
   }
@@ -111,6 +111,7 @@ export function SceneDirector({
       <Computer />
       {showCoffeeCup && <CoffeeCup />}
       {showNotebook && <Notebook />}
+
       <ProjectListing
         projects={projects}
         position={projectListingPosition as CoordArray}
