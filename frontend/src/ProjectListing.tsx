@@ -130,7 +130,7 @@ export function ProjectListing({ active, projects, ...groupProps }:
         // @ts-ignore
         position={blobPosition}
       >
-        {projects && projects.map((project, index) => (
+        {(projects || []).map((project, index) => (
           <ProjectEntry
             project={project}
             key={project._id + index.toString()}
