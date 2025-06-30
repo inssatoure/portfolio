@@ -8,7 +8,18 @@ import {
   DoubleSide,
 } from 'three';
 import { useInterval } from 'usehooks-ts';
-import { Project } from '../generatedSanitySchemaTypes';
+interface Project {
+  _id: string;
+  title: string;
+  slug: { current: string };
+  body: any;
+  mainImage: any;
+  repoLink?: string;
+  liveLink?: string;
+  tags?: string[];
+  order?: number;
+}
+
 import { ProjectEntry } from './ProjectEntry';
 import colors from './colors';
 import { useBreakpoints } from './useBreakpoints';

@@ -39,5 +39,6 @@ module.exports = {
     'react/jsx-closing-bracket-location': [2, 'tag-aligned'],
     'react/require-default-props': 'off',
     'no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
+    'react/no-unknown-property': ['off'],
   },
 };

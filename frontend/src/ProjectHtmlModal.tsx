@@ -1,8 +1,18 @@
 /* eslint-disable react/prop-types */
 import React, { ReactNode } from 'react';
 import { Html } from '@react-three/drei';
-// eslint-disable-next-line import/no-extraneous-dependencies
-import { Project } from '../generatedSanitySchemaTypes';
+interface Project {
+  _id: string;
+  title: string;
+  slug: { current: string };
+  body: any;
+  mainImage: any;
+  repoLink?: string;
+  liveLink?: string;
+  tags?: string[];
+  order?: number;
+}
+
 import { CoordArray } from './CoordArray';
 import {
   ProjectHeader, ProjectBody, ProjectCTA,
