@@ -8,8 +8,17 @@ import {
   DoubleSide,
 } from 'three';
 import { useInterval } from 'usehooks-ts';
+import { ProjectEntry } from './ProjectEntry';
+import colors from './colors';
+import { useBreakpoints } from './useBreakpoints';
+import { useHasNoMouse } from './useHasNoMouse';
+import { useSceneController } from './SceneController';
+import { fontUrls } from './typography';
+import { BackgroundColorMaterial } from './ProjectBackgroundMaterial';
+
 interface Project {
   _id: string;
+  _type: string;
   title: string;
   slug: { current: string };
   body: any;
@@ -18,15 +27,8 @@ interface Project {
   liveLink?: string;
   tags?: string[];
   order?: number;
+  color1?: string;
 }
-
-import { ProjectEntry } from './ProjectEntry';
-import colors from './colors';
-import { useBreakpoints } from './useBreakpoints';
-import { useHasNoMouse } from './useHasNoMouse';
-import { useSceneController } from './SceneController';
-import { fontUrls } from './typography';
-import { BackgroundColorMaterial } from './ProjectBackgroundMaterial';
 
 export function ProjectListing({ active, projects, ...groupProps }:
   { active:boolean, projects: Project[] | null; } & GroupProps) {

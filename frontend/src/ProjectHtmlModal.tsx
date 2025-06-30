@@ -1,8 +1,17 @@
 /* eslint-disable react/prop-types */
 import React, { ReactNode } from 'react';
 import { Html } from '@react-three/drei';
+import { CoordArray } from './CoordArray';
+import {
+  ProjectHeader, ProjectBody, ProjectCTA,
+} from './ProjectContent';
+import { CustomCursorHover } from './CustomCursor';
+import { useBreakpoints } from './useBreakpoints';
+import { useScrolledToBottom } from './useScrolledToBottom';
+
 interface Project {
   _id: string;
+  _type: string;
   title: string;
   slug: { current: string };
   body: any;
@@ -11,15 +20,8 @@ interface Project {
   liveLink?: string;
   tags?: string[];
   order?: number;
+  color1?: string;
 }
-
-import { CoordArray } from './CoordArray';
-import {
-  ProjectHeader, ProjectBody, ProjectCTA,
-} from './ProjectContent';
-import { CustomCursorHover } from './CustomCursor';
-import { useBreakpoints } from './useBreakpoints';
-import { useScrolledToBottom } from './useScrolledToBottom';
 
 export const CloseButton = ({ setOpen }: { setOpen: (_open: boolean) => void; }) => {
   const breakpoints = useBreakpoints();
