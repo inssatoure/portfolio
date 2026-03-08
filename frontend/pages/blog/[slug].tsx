@@ -123,6 +123,21 @@ export async function getStaticPaths() {
   };
 }
 
+function extractBodyContent(html: string): string {
+  // Extract content from <body> tag if it exists
+  const bodyMatch = html.match(/<body[^>]*>([\s\S]*?)<\/body>/i);
+  if (bodyMatch) {
+    return bodyMatch[1];
+  }
+  // If no body tag, remove DOCTYPE, html, head tags
+  let content = html
+    .replace(/<!DOCTYPE[^>]*>/i, '')
+    .replace(/<html[^>]*>/i, '')
+    .replace(/<\/html>/i, '')
+    .replace(/<head>[\s\S]*?<\/head>/i, '');
+  return content;
+}
+
 export async function getStaticProps({ params }: { params: { slug: string } }) {
   const post = blogPosts.find((p) => p.slug === params.slug);
 
@@ -134,7 +149,8 @@ export async function getStaticProps({ params }: { params: { slug: string } }) {
 
   let htmlContent = '';
   try {
-    htmlContent = fs.readFileSync(filePath, 'utf-8');
+    const rawHtml = fs.readFileSync(filePath, 'utf-8');
+    htmlContent = extractBodyContent(rawHtml);
   } catch (e) {
     console.error(`Could not read blog post file: ${filePath}`, e);
     return { notFound: true };
