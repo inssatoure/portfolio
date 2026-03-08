@@ -1,0 +1,2117 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Les Miracles des Écrits de Serigne Touba — Analyse Académique & Ésotérique du Khassida Wakana Haqqan</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Noto+Naskh+Arabic:wght@400;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+:root {
+  --gold: #C9A351;
+  --gold-light: #E8D5A3;
+  --gold-dark: #8B6F2E;
+  --ink: #1A1612;
+  --parchment: #F5F0E8;
+  --parchment-dark: #E8DFD0;
+  --emerald: #1B6B4A;
+  --emerald-dark: #0D4A30;
+  --burgundy: #6B1D2A;
+  --cream: #FAF7F0;
+  --shadow: rgba(26, 22, 18, 0.12);
+  --sacred-blue: #1A3A5C;
+  --sacred-blue-light: #2A5A8C;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* === GEOMETRIC ISLAMIC PATTERN OVERLAY === */
+.pattern-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.025;
+  background-image:
+    repeating-conic-gradient(from 0deg at 50% 50%, transparent 0deg 30deg, var(--gold) 30deg 32deg, transparent 32deg 60deg);
+  background-size: 80px 80px;
+}
+
+/* === HEADER === */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(175deg, var(--ink) 0%, #2A2420 40%, var(--emerald-dark) 100%);
+  padding: 4rem 2rem;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%; left: -50%;
+  width: 200%; height: 200%;
+  background: 
+    radial-gradient(ellipse at 30% 20%, rgba(201,163,81,0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 80%, rgba(27,107,74,0.06) 0%, transparent 50%);
+  animation: heroShimmer 20s ease-in-out infinite alternate;
+}
+
+@keyframes heroShimmer {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(-2%, -1%) rotate(1deg); }
+}
+
+.hero-bismillah {
+  font-family: 'Noto Naskh Arabic', 'Amiri', serif;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  color: var(--gold);
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+  opacity: 0;
+  animation: fadeUp 1.2s ease 0.3s forwards;
+  letter-spacing: 0.05em;
+}
+
+.hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.2rem, 5vw, 4.2rem);
+  font-weight: 300;
+  color: var(--parchment);
+  max-width: 900px;
+  line-height: 1.25;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
+  opacity: 0;
+  animation: fadeUp 1.2s ease 0.6s forwards;
+}
+
+.hero-title em {
+  font-style: italic;
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.hero-subtitle {
+  font-size: clamp(1rem, 2vw, 1.35rem);
+  color: var(--gold-light);
+  max-width: 700px;
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+  opacity: 0;
+  animation: fadeUp 1.2s ease 0.9s forwards;
+}
+
+.hero-verse {
+  font-family: 'Noto Naskh Arabic', 'Amiri', serif;
+  font-size: clamp(1.6rem, 3.5vw, 2.8rem);
+  color: var(--gold);
+  margin-top: 3rem;
+  padding: 2rem 3rem;
+  border: 1px solid rgba(201,163,81,0.2);
+  position: relative;
+  z-index: 1;
+  opacity: 0;
+  animation: fadeUp 1.2s ease 1.2s forwards;
+  direction: rtl;
+  max-width: 800px;
+}
+
+.hero-verse-trans {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  color: var(--parchment-dark);
+  font-style: italic;
+  margin-top: 0.8rem;
+  direction: ltr;
+  font-weight: 300;
+}
+
+.hero-ornament {
+  width: 120px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  margin: 2rem auto;
+  position: relative;
+  z-index: 1;
+  opacity: 0;
+  animation: fadeUp 1s ease 1.5s forwards;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* === NAVIGATION / SECTIONS === */
+.content-wrapper {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+section {
+  padding: 5rem 0;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-number {
+  font-size: 0.85rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.section-title {
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 300;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+.section-title em {
+  color: var(--emerald-dark);
+  font-style: italic;
+  font-weight: 600;
+}
+
+.divider {
+  width: 80px;
+  height: 1px;
+  background: var(--gold);
+  margin: 1.5rem auto;
+}
+
+/* === CARDS === */
+.analysis-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 2.5rem;
+  margin: 3rem 0;
+}
+
+.card {
+  background: white;
+  border: 1px solid var(--parchment-dark);
+  padding: 2.5rem;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px var(--shadow);
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--gold), var(--emerald));
+}
+
+.card-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.8rem;
+}
+
+.card h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--ink);
+}
+
+.card p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #4A433A;
+}
+
+/* === ARABIC QUOTE BLOCKS === */
+.arabic-block {
+  background: linear-gradient(135deg, var(--ink), #2A2420);
+  color: var(--parchment);
+  padding: 3rem;
+  text-align: center;
+  margin: 3rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.arabic-block::before {
+  content: '﴿';
+  position: absolute;
+  top: -20px; left: 20px;
+  font-family: 'Noto Naskh Arabic', serif;
+  font-size: 8rem;
+  color: rgba(201,163,81,0.06);
+}
+
+.arabic-block .arabic-text {
+  font-family: 'Noto Naskh Arabic', 'Amiri', serif;
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  color: var(--gold);
+  direction: rtl;
+  line-height: 2;
+  margin-bottom: 1rem;
+}
+
+.arabic-block .translation {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--gold-light);
+  font-weight: 300;
+}
+
+.arabic-block .reference {
+  font-size: 0.85rem;
+  color: rgba(245,240,232,0.5);
+  margin-top: 1rem;
+  letter-spacing: 0.1em;
+}
+
+/* === TABLES === */
+.data-table-wrapper {
+  overflow-x: auto;
+  margin: 2rem 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1rem;
+}
+
+table thead {
+  background: var(--ink);
+  color: var(--gold-light);
+}
+
+table th {
+  padding: 1rem 1.5rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+table td {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--parchment-dark);
+  vertical-align: top;
+}
+
+table tbody tr:nth-child(even) {
+  background: var(--parchment);
+}
+
+table tbody tr:hover {
+  background: var(--parchment-dark);
+}
+
+td.arabic {
+  font-family: 'Noto Naskh Arabic', 'Amiri', serif;
+  direction: rtl;
+  font-size: 1.15rem;
+  color: var(--emerald-dark);
+}
+
+td.number {
+  font-weight: 700;
+  color: var(--gold-dark);
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+td.highlight {
+  background: rgba(201,163,81,0.08);
+  font-weight: 600;
+}
+
+/* === CHART CONTAINERS === */
+.chart-container {
+  background: white;
+  border: 1px solid var(--parchment-dark);
+  padding: 2rem;
+  margin: 2rem 0;
+  position: relative;
+}
+
+.chart-container h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.chart-container .chart-subtitle {
+  font-size: 0.9rem;
+  color: #8A8070;
+  margin-bottom: 1.5rem;
+}
+
+.chart-canvas-wrapper {
+  position: relative;
+  max-height: 400px;
+}
+
+/* === MIRACLE COUNTER === */
+.miracle-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.stat-box {
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  background: white;
+  border: 1px solid var(--parchment-dark);
+  position: relative;
+}
+
+.stat-box::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 40px; height: 3px;
+  background: var(--gold);
+}
+
+.stat-number {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--emerald-dark);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+}
+
+.stat-detail {
+  font-size: 0.95rem;
+  color: #6A6050;
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+/* === FLOW DIAGRAM === */
+.flow-diagram {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 3rem 0;
+  padding: 2rem;
+  background: white;
+  border: 1px solid var(--parchment-dark);
+}
+
+.flow-node {
+  background: var(--parchment);
+  border: 2px solid var(--gold);
+  padding: 1.2rem 2rem;
+  text-align: center;
+  min-width: 180px;
+  position: relative;
+}
+
+.flow-node.primary {
+  background: var(--ink);
+  color: var(--gold);
+  border-color: var(--gold);
+}
+
+.flow-node.sacred {
+  background: var(--emerald-dark);
+  color: var(--gold-light);
+  border-color: var(--gold);
+}
+
+.flow-node h5 {
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+}
+
+.flow-node span {
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+.flow-arrow {
+  font-size: 1.5rem;
+  color: var(--gold);
+}
+
+/* === PROSE BLOCKS === */
+.prose {
+  max-width: 780px;
+  margin: 0 auto;
+  font-size: 1.15rem;
+  line-height: 2;
+  color: #3A3428;
+}
+
+.prose p { margin-bottom: 1.5rem; }
+
+.prose strong {
+  color: var(--emerald-dark);
+  font-weight: 600;
+}
+
+.prose .inline-arabic {
+  font-family: 'Noto Naskh Arabic', 'Amiri', serif;
+  color: var(--gold-dark);
+  font-size: 1.1em;
+  direction: rtl;
+  display: inline;
+}
+
+/* === CORRESPONDANCE MAP === */
+.correspondence-grid {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 0.5rem 2rem;
+  align-items: center;
+  max-width: 900px;
+  margin: 2rem auto;
+}
+
+.corr-left, .corr-right {
+  padding: 1rem 1.5rem;
+  background: white;
+  border: 1px solid var(--parchment-dark);
+}
+
+.corr-left { text-align: right; }
+.corr-right { text-align: left; }
+
+.corr-center {
+  font-size: 1.8rem;
+  color: var(--gold);
+  text-align: center;
+  font-weight: 700;
+}
+
+.corr-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+}
+
+.corr-value {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.corr-arabic {
+  font-family: 'Noto Naskh Arabic', serif;
+  color: var(--emerald-dark);
+  font-size: 1.1rem;
+  direction: rtl;
+}
+
+/* === FOOTER === */
+footer {
+  background: var(--ink);
+  color: var(--parchment-dark);
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+footer .footer-verse {
+  font-family: 'Noto Naskh Arabic', 'Amiri', serif;
+  font-size: 1.6rem;
+  color: var(--gold);
+  direction: rtl;
+  margin-bottom: 1rem;
+}
+
+footer p {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  max-width: 600px;
+  margin: 0 auto;
+  opacity: 0.7;
+}
+
+/* === RESPONSIVE — TABLET === */
+@media (max-width: 1024px) {
+  .content-wrapper {
+    padding: 0 1.5rem;
+  }
+  .analysis-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  .miracle-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  .correspondence-grid {
+    gap: 0.5rem 1rem;
+  }
+  .flow-node {
+    min-width: 150px;
+    padding: 1rem 1.2rem;
+  }
+  table th, table td {
+    padding: 0.8rem 1rem;
+  }
+}
+
+/* === RESPONSIVE — MOBILE === */
+@media (max-width: 768px) {
+  /* Layout */
+  .content-wrapper {
+    padding: 0 1rem;
+  }
+  section {
+    padding: 2.5rem 0;
+  }
+
+  /* Hero */
+  .hero {
+    padding: 2.5rem 1.2rem;
+    min-height: auto;
+    min-height: 85vh;
+  }
+  .hero-bismillah {
+    font-size: 1.4rem;
+  }
+  .hero-title {
+    font-size: 1.6rem;
+    line-height: 1.35;
+  }
+  .hero-subtitle {
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    line-height: 1.6;
+  }
+  .hero-verse {
+    padding: 1.2rem 1rem;
+    margin-top: 2rem;
+    font-size: 1.2rem;
+  }
+  .hero-verse-trans {
+    font-size: 0.9rem;
+  }
+
+  /* Section headers */
+  .section-header {
+    margin-bottom: 2.5rem;
+  }
+  .section-title {
+    font-size: 1.5rem;
+    padding: 0 0.5rem;
+  }
+  .section-number {
+    font-size: 0.75rem;
+  }
+
+  /* Cards grid */
+  .analysis-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+  .card {
+    padding: 1.5rem 1.2rem;
+  }
+  .card h3 {
+    font-size: 1.25rem;
+  }
+  .card p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  /* Stats */
+  .miracle-stats {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .stat-number {
+    font-size: 2.5rem;
+  }
+  .stat-label {
+    font-size: 0.7rem;
+  }
+  .stat-detail {
+    font-size: 0.8rem;
+  }
+  .stat-box {
+    padding: 1.5rem 0.8rem;
+  }
+
+  /* Flow diagrams */
+  .flow-diagram {
+    flex-direction: column;
+    padding: 1.2rem;
+    gap: 0.6rem;
+  }
+  .flow-node {
+    min-width: unset;
+    width: 100%;
+    padding: 1rem;
+  }
+  .flow-node h5 {
+    font-size: 0.9rem;
+  }
+  .flow-node span {
+    font-size: 0.78rem;
+  }
+  .flow-arrow {
+    transform: rotate(90deg);
+    font-size: 1.2rem;
+  }
+
+  /* Correspondence grid */
+  .correspondence-grid {
+    grid-template-columns: 1fr;
+    gap: 0.3rem;
+    max-width: 100%;
+  }
+  .corr-left, .corr-right {
+    text-align: center;
+    padding: 0.8rem 1rem;
+  }
+  .corr-center {
+    font-size: 1.2rem;
+    padding: 0.3rem 0;
+  }
+  .corr-value {
+    font-size: 1.1rem;
+  }
+  .corr-arabic {
+    font-size: 1rem;
+  }
+
+  /* Arabic blocks */
+  .arabic-block {
+    padding: 1.8rem 1.2rem;
+    margin: 2rem -1rem;
+    width: calc(100% + 2rem);
+  }
+  .arabic-block .arabic-text {
+    font-size: 1.15rem;
+    line-height: 1.8;
+  }
+  .arabic-block .translation {
+    font-size: 0.9rem;
+  }
+  .arabic-block .reference {
+    font-size: 0.75rem;
+  }
+  .arabic-block::before {
+    font-size: 4rem;
+    top: -10px;
+    left: 10px;
+  }
+
+  /* Tables */
+  .data-table-wrapper {
+    margin: 1.5rem -1rem;
+    width: calc(100% + 2rem);
+    padding: 0;
+    -webkit-overflow-scrolling: touch;
+  }
+  table {
+    font-size: 0.85rem;
+    min-width: 580px;
+  }
+  table th {
+    padding: 0.7rem 0.8rem;
+    font-size: 0.7rem;
+    white-space: nowrap;
+  }
+  table td {
+    padding: 0.7rem 0.8rem;
+    font-size: 0.85rem;
+  }
+  td.arabic {
+    font-size: 0.95rem;
+  }
+  td.number {
+    font-size: 1.1rem;
+  }
+
+  /* Charts */
+  .chart-container {
+    padding: 1.2rem;
+    margin: 1.5rem 0;
+  }
+  .chart-container h4 {
+    font-size: 1.05rem;
+  }
+  .chart-container .chart-subtitle {
+    font-size: 0.8rem;
+  }
+  .chart-canvas-wrapper {
+    max-height: 320px;
+  }
+
+  /* Prose */
+  .prose {
+    font-size: 1rem;
+    line-height: 1.85;
+    padding: 0 0.25rem;
+  }
+
+  /* Footer */
+  footer {
+    padding: 2.5rem 1.2rem;
+  }
+  footer .footer-verse {
+    font-size: 1.3rem;
+  }
+  footer p {
+    font-size: 0.85rem;
+  }
+}
+
+/* === RESPONSIVE — SMALL MOBILE === */
+@media (max-width: 420px) {
+  .hero {
+    padding: 2rem 1rem;
+    min-height: 80vh;
+  }
+  .hero-title {
+    font-size: 1.35rem;
+  }
+  .hero-subtitle {
+    font-size: 0.7rem;
+  }
+  .hero-verse {
+    padding: 1rem 0.8rem;
+    font-size: 1rem;
+  }
+
+  .section-title {
+    font-size: 1.3rem;
+  }
+
+  .miracle-stats {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+  .stat-box {
+    padding: 1.2rem 0.8rem;
+  }
+  .stat-number {
+    font-size: 2rem;
+  }
+
+  .card {
+    padding: 1.2rem 1rem;
+  }
+  .card h3 {
+    font-size: 1.1rem;
+  }
+
+  .arabic-block {
+    padding: 1.5rem 0.8rem;
+  }
+  .arabic-block .arabic-text {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .flow-node {
+    padding: 0.8rem;
+  }
+
+  table {
+    min-width: 500px;
+    font-size: 0.8rem;
+  }
+
+  .chart-canvas-wrapper {
+    max-height: 260px;
+  }
+  
+  .prose {
+    font-size: 0.92rem;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="pattern-overlay"></div>
+
+<!-- ============================================ -->
+<!-- HERO -->
+<!-- ============================================ -->
+<header class="hero">
+  <div class="hero-bismillah">بِسْمِ اللَّهِ الرَّحْمَـٰنِ الرَّحِيمِ</div>
+  <div class="hero-ornament"></div>
+  <h1 class="hero-title">Les Miracles des Écrits de <em>Serigne Touba</em></h1>
+  <p class="hero-subtitle">Analyse académique & ésotérique — Structures numériques, correspondances coraniques et architecture spirituelle<br>D'après une conférence de <strong style="color:var(--gold);font-weight:600;">Baye Ndiaga Diop Baye Fall</strong></p>
+  <div class="hero-verse">
+    <div class="arabic-text">وَكَانَ حَقًّا عَلَيْنَا نَصْرُ الْمُؤْمِنِينَ</div>
+    <div class="hero-verse-trans">« Et il est de Notre devoir de secourir les croyants » — Coran 30:47</div>
+  </div>
+</header>
+
+<div class="content-wrapper">
+
+<!-- ============================================ -->
+<!-- SECTION 1: MIRACLE NUMÉRIQUE DU TITRE -->
+<!-- ============================================ -->
+<section id="numerique">
+  <div class="section-header">
+    <span class="section-number">I — Analyse Numérologique</span>
+    <h2 class="section-title">Le miracle des <em>24 lettres</em></h2>
+    <div class="divider"></div>
+  </div>
+
+  <div class="prose">
+    <p>Le titre même du khassida, <span class="inline-arabic">وَكَانَ حَقًّا عَلَيْنَا نَصْرُ الْمُؤْمِنِينَ</span>, contient un encodage numérique fondamental. Le décompte de ses lettres révèle une architecture mathématique qui transcende le hasard et pointe vers une conception intentionnelle d'ordre divin.</p>
+  </div>
+
+  <div class="miracle-stats">
+    <div class="stat-box">
+      <div class="stat-number">23</div>
+      <div class="stat-label">Lettres de base</div>
+      <div class="stat-detail">Sans la Shadda</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-number">24</div>
+      <div class="stat-label">Lettres avec Shadda</div>
+      <div class="stat-detail">Jour + Nuit = cycle complet</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-number">12+12</div>
+      <div class="stat-label">La Shahāda</div>
+      <div class="stat-detail">Lā ilāha illallāh + Muḥammad rasūlullāh</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-number">∞</div>
+      <div class="stat-label">Mystères enfouis</div>
+      <div class="stat-detail">L'agrément de Dieu s'y trouve</div>
+    </div>
+  </div>
+
+  <!-- CORRESPONDANCE VISUELLE -->
+  <div class="correspondence-grid">
+    <div class="corr-left">
+      <div class="corr-label">Première moitié de la Shahāda</div>
+      <div class="corr-arabic">لَا إِلَـٰهَ إِلَّا اللَّه</div>
+      <div class="corr-value">12 lettres</div>
+    </div>
+    <div class="corr-center">=</div>
+    <div class="corr-right">
+      <div class="corr-label">12 heures du jour</div>
+      <div class="corr-value">Lumière — Ẓāhir</div>
+    </div>
+
+    <div class="corr-left">
+      <div class="corr-label">Seconde moitié de la Shahāda</div>
+      <div class="corr-arabic">مُحَمَّدٌ رَسُولُ اللَّه</div>
+      <div class="corr-value">12 lettres</div>
+    </div>
+    <div class="corr-center">=</div>
+    <div class="corr-right">
+      <div class="corr-label">12 heures de la nuit</div>
+      <div class="corr-value">Mystère — Bāṭin</div>
+    </div>
+
+    <div class="corr-left">
+      <div class="corr-label">Titre du Khassida</div>
+      <div class="corr-arabic">وَكَانَ حَقًّا عَلَيْنَا نَصْرُ الْمُؤْمِنِينَ</div>
+      <div class="corr-value">24 lettres</div>
+    </div>
+    <div class="corr-center">≡</div>
+    <div class="corr-right">
+      <div class="corr-label">Cycle temporel complet</div>
+      <div class="corr-value">Shahāda complète = Islam</div>
+    </div>
+  </div>
+
+  <div class="chart-container">
+    <h4>Symétrie numérique : 24 = 12 + 12</h4>
+    <p class="chart-subtitle">Décomposition du titre en ses équivalences numériques avec la Shahāda et le cycle nycthéméral</p>
+    <div class="chart-canvas-wrapper">
+      <canvas id="chart-24letters"></canvas>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- SECTION 2: ARCHITECTURE D'OUVERTURE -->
+<!-- ============================================ -->
+<section id="architecture">
+  <div class="section-header">
+    <span class="section-number">II — Architecture Spirituelle</span>
+    <h2 class="section-title">L'ouverture du khassida : une <em>construction parfaite</em></h2>
+    <div class="divider"></div>
+  </div>
+
+  <div class="prose">
+    <p>Les premiers mots du khassida constituent un édifice théologique d'une précision remarquable. Chaque élément de l'ouverture remplit une fonction spirituelle spécifique, créant une progression logique qui va de la <strong>déclaration d'intention</strong> à la <strong>protection divine</strong>, en passant par la <strong>louange</strong> et la <strong>gratitude</strong>.</p>
+  </div>
+
+  <!-- FLOW DIAGRAM -->
+  <div class="flow-diagram">
+    <div class="flow-node primary">
+      <h5>Yā man ja'ala</h5>
+      <span>Invocation — Adresse à Dieu</span>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node">
+      <h5>Hādhihil ḥurūf</h5>
+      <span>« Ces lettres »<br>Affirmation de la sacralité du texte</span>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node sacred">
+      <h5>Riḍāka wa riḍā Rasūlik</h5>
+      <span>Double agrément :<br>Dieu + Prophète ﷺ</span>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node">
+      <h5>Furḥata jamī'il mu'minīn</h5>
+      <span>Joie universelle :<br>croyants & croyantes</span>
+    </div>
+  </div>
+
+  <div class="flow-diagram">
+    <div class="flow-node primary">
+      <h5>Wajahtu kulliyya</h5>
+      <span>Engagement total de l'être</span>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node">
+      <h5>Bi ḥamdin wa shukr</h5>
+      <span>Louange (langue)<br>+ Gratitude (cœur)</span>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node sacred">
+      <h5>Ilā Waliyyil Mu'minīn</h5>
+      <span>Vers le Protecteur<br>des croyants</span>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node">
+      <h5>Ash-Shakūr</h5>
+      <span>Le Très Reconnaissant</span>
+    </div>
+  </div>
+
+  <div class="arabic-block">
+    <div class="arabic-text">وَجَّهْتُ كُلِّيَّ بِحَمْدٍ وَشُكُرْ إِلَى وَلِيِّ الْمُؤْمِنِينَ الشَّكُورْ</div>
+    <div class="translation">« J'ai orienté tout mon être, par la louange et la gratitude, vers le Protecteur des croyants, le Très Reconnaissant »</div>
+    <div class="reference">Wa Kāna Ḥaqqan — Vers d'ouverture</div>
+  </div>
+
+  <div class="data-table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>Élément de l'ouverture</th>
+          <th>Texte arabe</th>
+          <th>Fonction théologique</th>
+          <th>Niveau</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Invocation initiale</td>
+          <td class="arabic">يَا مَنْ جَعَلَ</td>
+          <td>Reconnaissance de la souveraineté divine sur le texte</td>
+          <td class="highlight">Tawḥīd</td>
+        </tr>
+        <tr>
+          <td>Sacralisation des lettres</td>
+          <td class="arabic">هَذِهِ الْحُرُوف</td>
+          <td>Le texte comme véhicule de l'agrément divin</td>
+          <td class="highlight">Sharī'a</td>
+        </tr>
+        <tr>
+          <td>Double agrément</td>
+          <td class="arabic">رِضَاكَ وَرِضَا رَسُولِكَ</td>
+          <td>Lien indissociable Dieu — Prophète ﷺ</td>
+          <td class="highlight">Ṭarīqa</td>
+        </tr>
+        <tr>
+          <td>Joie universelle</td>
+          <td class="arabic">فُرْحَةَ جَمِيعِ الْمُؤْمِنِينَ وَالْمُؤْمِنَات</td>
+          <td>Inclusion totale — hommes et femmes</td>
+          <td class="highlight">Ḥaqīqa</td>
+        </tr>
+        <tr>
+          <td>Engagement total</td>
+          <td class="arabic">وَجَّهْتُ كُلِّيَّ</td>
+          <td>Fana' — dissolution de l'ego dans l'orientation divine</td>
+          <td class="highlight">Ma'rifa</td>
+        </tr>
+        <tr>
+          <td>Instruments : louange + gratitude</td>
+          <td class="arabic">بِحَمْدٍ وَشُكُرْ</td>
+          <td>Ḥamd = langue ; Shukr = cœur, corps, être</td>
+          <td class="highlight">Iḥsān</td>
+        </tr>
+        <tr>
+          <td>Destination : Al-Waliyy</td>
+          <td class="arabic">وَلِيِّ الْمُؤْمِنِينَ</td>
+          <td>Nom divin protecteur, lié à Āyat al-Kursī</td>
+          <td class="highlight">Wilāya</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- SECTION 3: LE NOM AL-WALIYY -->
+<!-- ============================================ -->
+<section id="waliyy">
+  <div class="section-header">
+    <span class="section-number">III — Le Nom Divin al-Waliyy</span>
+    <h2 class="section-title">Du Verset du Trône à <em>Diéwal</em></h2>
+    <div class="divider"></div>
+  </div>
+
+  <div class="prose">
+    <p>Le choix du Nom divin <strong>al-Waliyy</strong> (le Protecteur) comme première invocation du khassida n'est pas fortuit. Ce Nom apparaît dans le Coran immédiatement après Āyat al-Kursī (le Verset du Trône, Q. 2:255), le verset le plus puissant du Coran. Ce qui suit ce verset — <span class="inline-arabic">اللَّهُ وَلِيُّ الَّذِينَ آمَنُوا</span> — établit la protection divine comme conséquence directe de la souveraineté absolue décrite dans le Trône.</p>
+    <p>À Diéwal, lorsque Iblīs apparut sous forme humaine, Serigne Touba prononça <strong>Yā Waliyyu</strong> et l'entité disparut instantanément. Ce Nom est donc à la fois un <strong>bouclier spirituel</strong> et une <strong>clé d'entrée</strong> dans le khassida : le lecteur est protégé dès le premier vers.</p>
+  </div>
+
+  <div class="arabic-block">
+    <div class="arabic-text">اللَّهُ وَلِيُّ الَّذِينَ آمَنُوا يُخْرِجُهُم مِّنَ الظُّلُمَاتِ إِلَى النُّورِ</div>
+    <div class="translation">« Dieu est le Protecteur de ceux qui croient. Il les fait sortir des ténèbres vers la lumière. »</div>
+    <div class="reference">Coran 2:257 — Immédiatement après Āyat al-Kursī</div>
+  </div>
+
+  <div class="analysis-grid">
+    <div class="card">
+      <div class="card-label">Connexion coranique</div>
+      <h3>Āyat al-Kursī → al-Waliyy</h3>
+      <p>Le verset le plus puissant du Coran (Q. 2:255) s'achève par <em>al-'Aliyy al-'Aẓīm</em>. Le verset suivant (2:257) commence par <em>Allāhu Waliyyulladhīna āmanū</em> — établissant que la protection (walāya) est la conséquence naturelle de la souveraineté (mulk).</p>
+    </div>
+    <div class="card">
+      <div class="card-label">Événement historique</div>
+      <h3>L'incident de Diéwal</h3>
+      <p>Serigne Touba témoigne : « Nājaytuhū bi Yā Naṣīru Yā Waliyyu, kafāytanī Iblīsu 'inda Jīwalī » — Par la seule invocation de ce Nom, Satan fut vaincu. Le khassida commence là où Satan échoue.</p>
+    </div>
+    <div class="card">
+      <div class="card-label">Dualité cosmique</div>
+      <h3>Lumière vs Ténèbres</h3>
+      <p>Le verset établit le « grand choc des civilisations » spirituel : Dieu extrait les croyants vers la lumière, tandis que les Ṭāghūt entraînent les incroyants vers les ténèbres. Ce combat est la trame du khassida entier.</p>
+    </div>
+  </div>
+
+  <div class="chart-container">
+    <h4>Structure de protection dans le khassida</h4>
+    <p class="chart-subtitle">Progression des couches de protection spirituelle du premier vers jusqu'à la conclusion</p>
+    <div class="chart-canvas-wrapper">
+      <canvas id="chart-protection"></canvas>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- SECTION 4: CORRESPONDANCES CORANIQUES -->
+<!-- ============================================ -->
+<section id="coraniques">
+  <div class="section-header">
+    <span class="section-number">IV — Correspondances Coraniques</span>
+    <h2 class="section-title">Chaque lettre renvoie à <em>un verset du Coran</em></h2>
+    <div class="divider"></div>
+  </div>
+
+  <div class="prose">
+    <p>L'une des affirmations les plus remarquables sur les écrits de Serigne Touba est que « <strong>chaque lettre qu'il écrit renvoie à un verset du Coran</strong> ». Le khassida Wa Kāna Ḥaqqan intègre explicitement des versets coraniques comme armature structurelle. L'analyse révèle au minimum trois sourates majeures comme sources d'ancrage.</p>
+  </div>
+
+  <div class="data-table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>Sourate source</th>
+          <th>Verset clé</th>
+          <th>Texte arabe</th>
+          <th>Fonction dans le Khassida</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Al-Baqara (2)</strong></td>
+          <td>v. 257</td>
+          <td class="arabic">اللَّهُ وَلِيُّ الَّذِينَ آمَنُوا</td>
+          <td>Ouverture — Protection divine et invocation du Nom al-Waliyy</td>
+        </tr>
+        <tr>
+          <td><strong>Ar-Rūm (30)</strong></td>
+          <td>v. 47</td>
+          <td class="arabic">وَكَانَ حَقًّا عَلَيْنَا نَصْرُ الْمُؤْمِنِينَ</td>
+          <td>Titre — Promesse divine de secours aux croyants</td>
+        </tr>
+        <tr>
+          <td><strong>Al-Mu'minūn (23)</strong></td>
+          <td>v. 1-11</td>
+          <td class="arabic">قَدْ أَفْلَحَ الْمُؤْمِنُونَ</td>
+          <td>Critères du vrai croyant — Programme moral du khassida</td>
+        </tr>
+        <tr>
+          <td><strong>Āl 'Imrān (3)</strong></td>
+          <td>v. 195</td>
+          <td class="arabic">فَاسْتَجَابَ لَهُمْ رَبُّهُمْ</td>
+          <td>Exaucement — Les invocations « Rabbanā » intégrées dans le texte</td>
+        </tr>
+        <tr>
+          <td><strong>Āl 'Imrān (3)</strong></td>
+          <td>v. 192-194</td>
+          <td class="arabic">رَبَّنَا إِنَّكَ مَنْ تُدْخِلِ النَّارَ فَقَدْ أَخْزَيْتَهُ</td>
+          <td>Prières « Rabbanā » — Protection contre le Feu, pardon, réunion avec les pieux</td>
+        </tr>
+        <tr>
+          <td><strong>As-Sajda (32)</strong></td>
+          <td>v. 17</td>
+          <td class="arabic">فَلَا تَعْلَمُ نَفْسٌ مَّا أُخْفِيَ لَهُم مِّن قُرَّةِ أَعْيُنٍ</td>
+          <td>Clôture — Récompense cachée, lien Serigne Touba → Serigne Fallou</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="chart-container">
+    <h4>Cartographie des sourates sources dans Wa Kāna Ḥaqqan</h4>
+    <p class="chart-subtitle">Fréquence et position des références coraniques identifiées dans le khassida</p>
+    <div class="chart-canvas-wrapper">
+      <canvas id="chart-sourates"></canvas>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- SECTION 5: LES 7 CRITÈRES DU MU'MIN -->
+<!-- ============================================ -->
+<section id="mumin">
+  <div class="section-header">
+    <span class="section-number">V — Miroir coranique</span>
+    <h2 class="section-title">Les 7 critères du <em>vrai croyant</em></h2>
+    <div class="divider"></div>
+  </div>
+
+  <div class="prose">
+    <p>La Sourate al-Mu'minūn (23:1-11) énonce les conditions du croyant authentique. Serigne Touba reprend cette architecture dans le khassida comme un <strong>programme de transformation spirituelle</strong>. Ces critères forment un miroir : le khassida est la réponse à la question « qui mérite le secours divin promis dans le titre ? ».</p>
+  </div>
+
+  <div class="data-table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th style="width:40px">#</th>
+          <th>Critère coranique</th>
+          <th>Texte arabe</th>
+          <th>Réalité contemporaine</th>
+          <th>Remède dans le Khassida</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="number">1</td>
+          <td><strong>Humilité dans la prière</strong> (Khushū')</td>
+          <td class="arabic">فِي صَلَاتِهِمْ خَاشِعُونَ</td>
+          <td>La prière « bâclée », sans présence du cœur</td>
+          <td>Wajahtu kulliyya — l'engagement total comme modèle</td>
+        </tr>
+        <tr>
+          <td class="number">2</td>
+          <td><strong>Détournement des futilités</strong></td>
+          <td class="arabic">عَنِ اللَّغْوِ مُعْرِضُونَ</td>
+          <td>Les mêmes qui remplissent la mosquée et le stade</td>
+          <td>Méditation profonde sur les vers comme antidote</td>
+        </tr>
+        <tr>
+          <td class="number">3</td>
+          <td><strong>Acquittement de la Zakāt</strong></td>
+          <td class="arabic">لِلزَّكَاةِ فَاعِلُونَ</td>
+          <td>Abandonnée, détournée, ou conditionnée</td>
+          <td>Les différentes rétributions (Ajr, Thawāb, Jazā')</td>
+        </tr>
+        <tr>
+          <td class="number">4</td>
+          <td><strong>Préservation de la chasteté</strong></td>
+          <td class="arabic">لِفُرُوجِهِمْ حَافِظُونَ</td>
+          <td>Transgression généralisée</td>
+          <td>Protection par la wilāya et le Nom al-Waliyy</td>
+        </tr>
+        <tr>
+          <td class="number">5</td>
+          <td><strong>Fidélité aux dépôts</strong> (Amāna)</td>
+          <td class="arabic">لِأَمَانَاتِهِمْ وَعَهْدِهِمْ رَاعُونَ</td>
+          <td>Trahison de la confiance</td>
+          <td>Le khassida comme pacte (munājāt) avec Dieu</td>
+        </tr>
+        <tr>
+          <td class="number">6</td>
+          <td><strong>Préservation des prières</strong></td>
+          <td class="arabic">عَلَىٰ صَلَوَاتِهِمْ يُحَافِظُونَ</td>
+          <td>Négligence des horaires et de la régularité</td>
+          <td>24 lettres = 24 heures = prière perpétuelle</td>
+        </tr>
+        <tr>
+          <td class="number">7</td>
+          <td><strong>→ Héritage du Firdaws</strong></td>
+          <td class="arabic">يَرِثُونَ الْفِرْدَوْسَ هُمْ فِيهَا خَالِدُونَ</td>
+          <td>Promesse eschatologique</td>
+          <td>Jazā'an bimā kānū ya'malūn — récompense ultime</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="chart-container">
+    <h4>Auto-évaluation spirituelle : les 7 critères</h4>
+    <p class="chart-subtitle">Diagramme radar des critères coraniques du croyant authentique (Sourate al-Mu'minūn, 23:1-11)</p>
+    <div class="chart-canvas-wrapper">
+      <canvas id="chart-criteria"></canvas>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- SECTION 6: TRINITÉ DES RÉTRIBUTIONS -->
+<!-- ============================================ -->
+<section id="retributions">
+  <div class="section-header">
+    <span class="section-number">VI — Taxonomie des Rétributions</span>
+    <h2 class="section-title">Ajr, Thawāb, Jazā' : les <em>trois salaires divins</em></h2>
+    <div class="divider"></div>
+  </div>
+
+  <div class="arabic-block">
+    <div class="arabic-text">أَجْرًا كَبِيرًا وَثَوَابًا وَجَزَاء وَالْوَعْدُ لِي فِي رَمَضَانَ نَجَسَا</div>
+    <div class="translation">« Une immense récompense, un mérite, une rétribution — et la promesse m'a été accomplie durant le Ramadan »</div>
+    <div class="reference">Wa Kāna Ḥaqqan — Serigne Touba</div>
+  </div>
+
+  <div class="analysis-grid">
+    <div class="card">
+      <div class="card-label">Premier salaire</div>
+      <h3>Ajr — أَجْر</h3>
+      <p>La récompense inépuisable. Serigne Touba l'explique : <em>« Ajrul-ladhī mā 'indahu lā yanfadu »</em> — le salaire de Celui dont les réserves ne s'épuisent jamais. C'est la rétribution quantitative, la mesure de la générosité divine sans limite.</p>
+    </div>
+    <div class="card">
+      <div class="card-label">Deuxième salaire</div>
+      <h3>Thawāb — ثَوَاب</h3>
+      <p>Le mérite spirituel qualitatif. Là où l'Ajr est quantité, le Thawāb est qualité : c'est l'élévation en degré, le rapprochement de Dieu, la station spirituelle (maqām) atteinte par l'œuvre pieuse.</p>
+    </div>
+    <div class="card">
+      <div class="card-label">Troisième salaire</div>
+      <h3>Jazā' — جَزَاء</h3>
+      <p>La rétribution exacte et personnalisée. Le Jazā' est la correspondance parfaite entre l'acte et sa récompense : <em>jazā'an bimā kānū ya'malūn</em> — en parfaite proportion de ce qu'ils œuvraient.</p>
+    </div>
+  </div>
+
+  <div class="chart-container">
+    <h4>Les trois dimensions de la rétribution divine</h4>
+    <p class="chart-subtitle">Comparaison conceptuelle entre Ajr (quantité), Thawāb (qualité) et Jazā' (correspondance)</p>
+    <div class="chart-canvas-wrapper">
+      <canvas id="chart-retribution"></canvas>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- SECTION 7: LES NIVEAUX DE PARDON -->
+<!-- ============================================ -->
+<section id="pardon">
+  <div class="section-header">
+    <span class="section-number">VII — Les 3 niveaux de l'Istighfār</span>
+    <h2 class="section-title">La science du <em>pardon divin</em></h2>
+    <div class="divider"></div>
+  </div>
+
+  <div class="prose">
+    <p>Serigne Touba enseigne une classification ésotérique du pardon divin en trois niveaux progressifs. Cette taxonomie, tirée de sa lecture de <span class="inline-arabic">وَكَفِّرْ عَنَّا سَيِّئَاتِنَا</span>, révèle la profondeur de la miséricorde divine et la position unique du disciple sincère.</p>
+  </div>
+
+  <div class="data-table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>Niveau</th>
+          <th>Mécanisme divin</th>
+          <th>Résultat</th>
+          <th>Bénéficiaire</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="number">1</td>
+          <td>Pardon simple (Maghfira)</td>
+          <td>Le péché est pardonné mais la <strong>trace subsiste</strong> dans le registre — elle servira d'avertissement en cas de récidive</td>
+          <td>Le croyant ordinaire</td>
+        </tr>
+        <tr>
+          <td class="number">2</td>
+          <td>Pardon + Effacement (Takfīr)</td>
+          <td>Le péché est pardonné ET <strong>effacé du registre</strong> — comme s'il n'avait jamais existé</td>
+          <td>Le croyant sincère</td>
+        </tr>
+        <tr>
+          <td class="number">3</td>
+          <td>Pardon + Effacement + Remplacement (Tabdīl)</td>
+          <td>Le péché est pardonné, effacé, et <strong>remplacé par une bonne action</strong> inscrite à la place</td>
+          <td>Le disciple de Serigne Touba</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="chart-container">
+    <h4>Progression des niveaux de pardon divin</h4>
+    <p class="chart-subtitle">D'après l'enseignement de Serigne Touba sur Wa kaffir 'annā sayyi'ātinā</p>
+    <div class="chart-canvas-wrapper">
+      <canvas id="chart-pardon"></canvas>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- SECTION 8: NATURE DU KHASSIDA -->
+<!-- ============================================ -->
+<section id="nature">
+  <div class="section-header">
+    <span class="section-number">VIII — Nature Multiple</span>
+    <h2 class="section-title">Les <em>sept dimensions</em> du khassida</h2>
+    <div class="divider"></div>
+  </div>
+
+  <div class="miracle-stats">
+    <div class="stat-box">
+      <div class="stat-number" style="font-size:2.5rem">🤲</div>
+      <div class="stat-label">Munājāt</div>
+      <div class="stat-detail">Entretien intime avec Dieu</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-number" style="font-size:2.5rem">✓</div>
+      <div class="stat-label">Ijāba</div>
+      <div class="stat-detail">Khassida d'exaucement</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-number" style="font-size:2.5rem">⚔</div>
+      <div class="stat-label">Ḥimāya</div>
+      <div class="stat-detail">Protection contre les ennemis</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-number" style="font-size:2.5rem">⚖</div>
+      <div class="stat-label">Shafā'a</div>
+      <div class="stat-detail">Plaidoyer pour la Umma</div>
+    </div>
+  </div>
+
+  <div class="data-table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>Dimension</th>
+          <th>Définition</th>
+          <th>Preuve textuelle</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>1. Munājāt</strong> (Entretien intime)</td>
+          <td>Le lecteur converse secrètement avec son Seigneur</td>
+          <td>« Quand tu le lis, c'est comme si tu conversais secrètement avec ton Seigneur »</td>
+        </tr>
+        <tr>
+          <td><strong>2. Ijāba</strong> (Exaucement)</td>
+          <td>Les prières formulées dans le khassida sont exaucées</td>
+          <td><em>Ijābatan tuṣaḥḥiḥul aḥdāhā ilā siwāhā abadan wa dā'ā</em></td>
+        </tr>
+        <tr>
+          <td><strong>3. Ḥimāya</strong> (Protection)</td>
+          <td>Bouclier contre les ennemis visibles et invisibles</td>
+          <td>« Même si on tirait sur lui ou qu'on essayait de le brûler, le feu ne l'atteindrait pas »</td>
+        </tr>
+        <tr>
+          <td><strong>4. Shafā'a</strong> (Intercession)</td>
+          <td>Serigne Touba plaide pour la Umma devant Dieu</td>
+          <td><em>Billāhi āmanū wa aslimū ma'ā — il jure pour les croyants</em></td>
+        </tr>
+        <tr>
+          <td><strong>5. Tarbiya</strong> (Éducation)</td>
+          <td>Programme de formation spirituelle complète</td>
+          <td>Les 7 critères de Sourate al-Mu'minūn intégrés</td>
+        </tr>
+        <tr>
+          <td><strong>6. Jazā'</strong> (Rétribution)</td>
+          <td>Contient toutes les formes de récompenses divines</td>
+          <td><em>Ajran kabīran wa thawāban wa jazā'</em></td>
+        </tr>
+        <tr>
+          <td><strong>7. Wa'd</strong> (Promesse)</td>
+          <td>Accomplissement des promesses divines</td>
+          <td><em>Wal-wa'du lī fī Ramaḍāni najasā</em> — accomplie au Ramadan</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- SECTION 9: VERS UNIQUE -->
+<!-- ============================================ -->
+<section id="vers-unique">
+  <div class="section-header">
+    <span class="section-number">IX — Le Vers-Univers</span>
+    <h2 class="section-title">Un seul vers suffit pour <em>les deux mondes</em></h2>
+    <div class="divider"></div>
+  </div>
+
+  <div class="arabic-block">
+    <div class="arabic-text">مِنَ اللَّهِ رَبِّ الْعَرْشِ أَبْقِي صَلَاتَهُ بِتَسْلِيمِهِ لِلْمُصْطَفَى مُخْجِلَ الْيَمِّ</div>
+    <div class="translation">« De la part de Dieu, le Seigneur du Trône, je perpétue la prière sur l'Élu qui fait honte à la mer par sa générosité »</div>
+    <div class="reference">Vers recommandé par Serigne Habibou Mbacké comme suffisant pour les deux mondes</div>
+  </div>
+
+  <div class="prose">
+    <p>Serigne Habibou Mbacké enseigna qu'un seul vers de Serigne Touba peut suffire pour obtenir « ce que l'on désire ici-bas et dans l'au-delà ». Ce vers condense les quatre actes les plus aimés de Dieu en une seule unité poétique :</p>
+  </div>
+
+  <div class="data-table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th style="width:40px">#</th>
+          <th>Acte aimé de Dieu</th>
+          <th>Expression dans le vers</th>
+          <th>Texte arabe</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="number">1</td>
+          <td><strong>Mention de Dieu</strong> (Dhikr Allāh)</td>
+          <td>« De la part de Dieu, le Seigneur du Trône »</td>
+          <td class="arabic">مِنَ اللَّهِ رَبِّ الْعَرْشِ</td>
+        </tr>
+        <tr>
+          <td class="number">2</td>
+          <td><strong>Prière sur le Prophète ﷺ</strong> (Ṣalāt)</td>
+          <td>« Je perpétue la prière sur lui »</td>
+          <td class="arabic">أَبْقِي صَلَاتَهُ</td>
+        </tr>
+        <tr>
+          <td class="number">3</td>
+          <td><strong>Salutation au Prophète ﷺ</strong> (Taslīm)</td>
+          <td>« Par sa salutation »</td>
+          <td class="arabic">بِتَسْلِيمِهِ</td>
+        </tr>
+        <tr>
+          <td class="number">4</td>
+          <td><strong>Éloge du Prophète ﷺ</strong> (Madḥ)</td>
+          <td>« L'Élu qui fait honte à la mer » — sa générosité surpasse les vagues</td>
+          <td class="arabic">لِلْمُصْطَفَى مُخْجِلَ الْيَمِّ</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="chart-container">
+    <h4>Densité spirituelle : 4 actes en 1 vers</h4>
+    <p class="chart-subtitle">Concentration des actes les plus aimés de Dieu dans un seul vers de Serigne Touba</p>
+    <div class="chart-canvas-wrapper">
+      <canvas id="chart-vers-unique"></canvas>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- SECTION 10: CLÔTURE — AS-SAJDA -->
+<!-- ============================================ -->
+<section id="cloture">
+  <div class="section-header">
+    <span class="section-number">X — La Clôture : Sourate as-Sajda</span>
+    <h2 class="section-title">Le secret réservé à <em>Serigne Fallou</em></h2>
+    <div class="divider"></div>
+  </div>
+
+  <div class="arabic-block">
+    <div class="arabic-text">فَلَا تَعْلَمُ نَفْسٌ مَّا أُخْفِيَ لَهُم مِّن قُرَّةِ أَعْيُنٍ جَزَاءً بِمَا كَانُوا يَعْمَلُونَ</div>
+    <div class="translation">« Aucune âme ne sait ce qui a été caché pour eux comme réjouissance pour les yeux, en récompense de ce qu'ils œuvraient »</div>
+    <div class="reference">Coran 32:17 — As-Sajda — Verset de clôture du Khassida, adressé par Serigne Touba à Serigne Fallou Mbacké</div>
+  </div>
+
+  <div class="prose">
+    <p>Le khassida se clôt par le verset le plus mystérieux du Coran sur la récompense : celui qui affirme que les délices réservés aux serviteurs sont au-delà de toute imagination humaine. Ce verset, Serigne Touba l'adressa personnellement à Serigne Fallou Mbacké dans une lettre, établissant ainsi un <strong>lien direct entre le khassida et la transmission spirituelle familiale</strong>.</p>
+    <p>L'anecdote rapportée — où Serigne Touba posa sa propre tête sur celle de Serigne Fallou, inversant le geste de respect filial — symbolise un <strong>transfert spirituel sans précédent</strong>, dont les « mystères cachés » rejoignent le verset de clôture : <em>personne ne peut mesurer ce qui leur est réservé</em>.</p>
+  </div>
+</section>
+
+</div><!-- end content-wrapper -->
+
+<!-- ============================================ -->
+<!-- SECTION 11: DIMENSION ÉSOTÉRIQUE DE SERIGNE TOUBA -->
+<!-- ============================================ -->
+<div class="content-wrapper">
+<section id="esoterisme">
+  <div class="section-header">
+    <span class="section-number">XI — Dimension Ésotérique</span>
+    <h2 class="section-title">Cheikh Ahmadou Bamba : <em>l'homme au-delà de l'homme</em></h2>
+    <div class="divider"></div>
+  </div>
+
+  <div class="prose">
+    <p>Cheikh Ahmadou Bamba Mbacké (1853–1927), connu sous le nom de <strong>Khadimou Rassoul</strong> (le Serviteur du Messager) et de <strong>Serigne Touba</strong>, n'est pas seulement le fondateur de la confrérie Mouride. Il est, dans la tradition ésotérique soufie, un pôle spirituel (<em>Qutb</em>) dont l'existence terrestre fut un voile jeté sur des réalités métaphysiques qui dépassent l'entendement ordinaire. Sa vie, ses épreuves, ses écrits et ses miracles forment un tout cohérent dont chaque élément renvoie à une station spirituelle (<em>maqām</em>) précise.</p>
+  </div>
+
+  <div class="arabic-block">
+    <div class="arabic-text">جَعَلَنِي اللَّهُ خَادِمَ رَسُولِهِ</div>
+    <div class="translation">« Dieu a fait de moi le Serviteur de Son Messager »</div>
+    <div class="reference">Cheikh Ahmadou Bamba — Khadimou Rassoul</div>
+  </div>
+
+  <div class="analysis-grid">
+    <div class="card">
+      <div class="card-label">L'exil comme alchimie spirituelle</div>
+      <h3>Gabon (1895–1902) : la forge de l'âme</h3>
+      <p>Exilé à Mayumba puis à Lambaréné dans la jungle équatoriale, Serigne Touba vécut 7 années et 7 mois d'épreuves. Il décrit lui-même cette période comme un combat contre l'âme charnelle (<em>nafs</em>). À Lambaréné, il écrit : « J'ai subi des épreuves telles que seul le retrait de l'âme (l'agonie) est plus pénible. » C'est là que Dieu lui révéla toutes ses imperfections et le purifia, jusqu'à ce qu'il atteigne le rang de Khadimou Rassoul — le Serviteur du Prophète ﷺ.</p>
+    </div>
+    <div class="card">
+      <div class="card-label">La prière sur la mer</div>
+      <h3>Le miracle du navire</h3>
+      <p>Sur le « Ville de Pernambouc » en route vers le Gabon, enchaîné et privé d'espace pour prier, Serigne Touba déploya son tapis sur les vagues de l'océan et accomplit sa prière sur l'eau. Ce miracle, le plus célèbre de la tradition mouride, n'est pas un simple prodige physique : il symbolise la soumission de la création matérielle devant la réalité spirituelle du serviteur accompli.</p>
+    </div>
+    <div class="card">
+      <div class="card-label">Les épreuves coloniales</div>
+      <h3>7 tentatives, 7 échecs</h3>
+      <p>Les autorités coloniales tentèrent de l'éliminer par le poison, par les armes, par le feu (en le jetant dans un four), en le livrant à un lion, et par la privation de nourriture — sans jamais y parvenir. Dans la vision ésotérique, ces épreuves sont les <em>balā'</em> (épreuves divines) par lesquelles Dieu éprouve ses élus, et chaque miracle est un <em>karāma</em> (prodige des saints) attestant de sa station.</p>
+    </div>
+  </div>
+
+  <div class="data-table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>Épreuve / Miracle</th>
+          <th>Lieu</th>
+          <th>Signification ésotérique</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Prière sur les vagues de l'océan</strong></td>
+          <td>Atlantique, en route vers le Gabon</td>
+          <td>Domination de l'esprit sur la matière ; la mer comme symbole du <em>barzakh</em> (monde intermédiaire)</td>
+        </tr>
+        <tr>
+          <td><strong>Survie dans la fournaise</strong></td>
+          <td>Gabon</td>
+          <td>Rappel d'Ibrāhīm (عليه السلام) dans le feu — le feu devient « fraîcheur et paix » (Q. 21:69)</td>
+        </tr>
+        <tr>
+          <td><strong>Le lion qui se prosterne</strong></td>
+          <td>Gabon</td>
+          <td>Soumission du monde animal à la <em>wilāya</em> ; la <em>hayba</em> (majesté) du saint dompte la création</td>
+        </tr>
+        <tr>
+          <td><strong>Satan vaincu à Diéwal</strong></td>
+          <td>Diéwal, Sénégal</td>
+          <td>Invocation du Nom al-Waliyy — victoire sur Iblīs, miroir de la lutte ésotérique permanente</td>
+        </tr>
+        <tr>
+          <td><strong>Composition de milliers d'écrits en exil</strong></td>
+          <td>Mayumba, Lambaréné</td>
+          <td>L'inspiration divine (<em>ilhām</em>) ne cesse pas par l'emprisonnement du corps ; l'esprit demeure libre</td>
+        </tr>
+        <tr>
+          <td><strong>Retour triomphal en 1902</strong></td>
+          <td>Dakar</td>
+          <td>L'exil comme <em>hijra</em> spirituelle ; le retour comme <em>fath</em> (ouverture/victoire)</td>
+        </tr>
+        <tr>
+          <td><strong>Exil en Mauritanie (1903–1907)</strong></td>
+          <td>Mauritanie</td>
+          <td>Confrontation avec les plus grands savants musulmans — tous reconnurent sa supériorité spirituelle</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="prose">
+    <p><strong>L'œuvre littéraire comme miracle permanent.</strong> Serigne Touba réalisa plus de mille écrits entre ses séjours à Libreville et Mayumba. Son œuvre compte plus de 35 000 vers de poésie et 4 000 lignes de prose. Son seul recueil <em>Fulk ul-Mashūn</em> contient 366 poèmes totalisant 11 347 vers. Chaque khassida est un univers en soi, et l'auteur lui-même affirme : « Je me suis entretenu avec Allāh durant ces années, à travers des écrits qu'il n'est pas permis et ne sera jamais permis de divulguer. »</p>
+    <p><strong>Le marcheur avec les Gens de Badr.</strong> Serigne Touba décrit sa marche vers l'exil en ces termes : « Je cheminais en vérité en compagnie des Vertueux Gens de Badr, alors que mes persécuteurs étaient persuadés que j'étais leur prisonnier. Je marchais en fait vers Dieu en compagnie du Prophète ﷺ et de ses excellents Compagnons, car ma marche ne saurait point avoir d'autre objet que Dieu Lui-Même. » Cette vision transcendante des événements — où l'exil physique est en réalité un voyage spirituel — est la clé ésotérique de toute son œuvre.</p>
+    <p><strong>Massalik al-Jinān : le programme de transformation.</strong> Son œuvre maîtresse, « Les Itinéraires du Paradis », constitue le guide complet de la voie mouride. Notre mère Aïcha identifiait le Prophète ﷺ au Coran ; de même, Serigne Touba est identifié à ses écrits. Celui qui veut le connaître véritablement doit lire et méditer ses khassidas, car ses mots ne sortent jamais du cadre du Coran et du Hadith.</p>
+  </div>
+
+  <div class="chart-container">
+    <h4>Chronologie spirituelle de Serigne Touba</h4>
+    <p class="chart-subtitle">Les stations majeures de sa vie comme parcours ésotérique initiatique</p>
+    <div class="chart-canvas-wrapper">
+      <canvas id="chart-chronologie"></canvas>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- ============================================ -->
+<!-- VIDEO SECTION -->
+<!-- ============================================ -->
+<section id="video" style="background:var(--ink);padding:4rem 2rem;">
+  <div style="max-width:900px;margin:0 auto;text-align:center;">
+    <span class="section-number" style="color:var(--gold-light);">Conférence Originale</span>
+    <h2 class="section-title" style="color:var(--parchment);margin-bottom:2rem;">Écouter la conférence de <em style="color:var(--gold);">Baye Ndiaga Diop Baye Fall</em></h2>
+    <div class="divider" style="margin-bottom:2rem;"></div>
+    <a href="https://www.youtube.com/watch?v=5tJ1CuCIvJ8" target="_blank" rel="noopener" 
+       style="display:block;position:relative;overflow:hidden;border:2px solid var(--gold);border-radius:2px;text-decoration:none;max-width:800px;margin:0 auto;">
+      <img src="https://img.youtube.com/vi/5tJ1CuCIvJ8/maxresdefault.jpg" 
+           alt="Conférence sur Wa Kāna Ḥaqqan — Baye Ndiaga Diop Baye Fall"
+           style="width:100%;display:block;opacity:0.7;transition:opacity 0.3s;"
+           onerror="this.src='https://img.youtube.com/vi/5tJ1CuCIvJ8/hqdefault.jpg'"
+           onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='0.7'">
+      <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:80px;height:80px;background:rgba(201,163,81,0.9);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:transform 0.3s;">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1A1612" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+      </div>
+      <div style="position:absolute;bottom:0;left:0;right:0;padding:1.5rem;background:linear-gradient(transparent,rgba(26,22,18,0.9));">
+        <p style="color:var(--gold);font-size:1.1rem;font-weight:600;margin:0;">▶ Regarder sur YouTube</p>
+        <p style="color:var(--parchment-dark);font-size:0.9rem;margin:0.3rem 0 0;">Baye Ndiaga Diop Baye Fall — Wa Kāna Ḥaqqan</p>
+      </div>
+    </a>
+    <p style="color:var(--gold-light);margin-top:1.5rem;font-style:italic;font-size:1.05rem;">Conférence dédiée à Serigne Saliou Mbacké — Analyse du Khassida Wa Kāna Ḥaqqan</p>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- FOOTER -->
+<!-- ============================================ -->
+<footer>
+  <div class="footer-verse">وَالرَّبُّ المُصْلِحُ</div>
+  <p>« Et le Seigneur est Celui qui réforme »</p>
+  <div style="width:60px;height:1px;background:var(--gold);margin:2rem auto;"></div>
+  <p style="opacity:0.5; font-size:0.85rem;">Analyse réalisée à partir de la conférence de Baye Ndiaga Diop Baye Fall sur Wa Kāna Ḥaqqan<br>dédiée à Serigne Saliou Mbacké</p>
+  <div style="margin-top:2.5rem;padding-top:2rem;border-top:1px solid rgba(201,163,81,0.15);">
+    <p style="font-size:0.95rem;color:var(--gold-light);margin-bottom:0.5rem;">Talibé exécutant : <a href="https://www.issatoure.com" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:underline;font-weight:600;">Inssa TOURÉ</a></p>
+    <p style="font-size:0.85rem;opacity:0.6;">
+      <a href="mailto:diguifils@gmail.com" style="color:var(--gold-light);text-decoration:none;">diguifils@gmail.com</a>
+    </p>
+    <p style="font-size:0.8rem;opacity:0.4;margin-top:1rem;">Merci de me contacter pour toute information ou correction</p>
+  </div>
+</footer>
+
+<!-- ============================================ -->
+<!-- CHARTS JS -->
+<!-- ============================================ -->
+<script>
+const gold = '#C9A351';
+const goldLight = '#E8D5A3';
+const emerald = '#1B6B4A';
+const emeraldDark = '#0D4A30';
+const burgundy = '#6B1D2A';
+const ink = '#1A1612';
+const sacredBlue = '#1A3A5C';
+
+Chart.defaults.font.family = "'Cormorant Garamond', Georgia, serif";
+Chart.defaults.font.size = 14;
+Chart.defaults.color = '#4A433A';
+
+// CHART 1: 24 letters
+new Chart(document.getElementById('chart-24letters'), {
+  type: 'bar',
+  data: {
+    labels: ['Lā ilāha illallāh', 'Muḥammadur Rasūlullāh', 'Wa kāna ḥaqqan...', 'Heures du jour', 'Heures de la nuit', 'Cycle complet'],
+    datasets: [{
+      label: 'Nombre de lettres / heures',
+      data: [12, 12, 24, 12, 12, 24],
+      backgroundColor: [gold, emerald, burgundy, goldLight, emeraldDark, sacredBlue],
+      borderWidth: 0,
+      borderRadius: 2
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: true,
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        backgroundColor: ink,
+        titleFont: { size: 14 },
+        bodyFont: { size: 13 }
+      }
+    },
+    scales: {
+      y: {
+        beginAtZero: true,
+        max: 28,
+        grid: { color: 'rgba(0,0,0,0.05)' },
+        ticks: { stepSize: 4 }
+      },
+      x: {
+        grid: { display: false },
+        ticks: { font: { size: 11 }, maxRotation: 30 }
+      }
+    }
+  }
+});
+
+// CHART 2: Protection layers
+new Chart(document.getElementById('chart-protection'), {
+  type: 'line',
+  data: {
+    labels: ['Invocation', 'Nom al-Waliyy', 'Séparation de Satan', 'Sortie des ténèbres', 'Entrée dans la lumière', 'Protection complète', 'Exaucement'],
+    datasets: [{
+      label: 'Intensité de la protection',
+      data: [20, 45, 65, 78, 88, 95, 100],
+      borderColor: emerald,
+      backgroundColor: 'rgba(27,107,74,0.08)',
+      fill: true,
+      tension: 0.4,
+      pointRadius: 6,
+      pointBackgroundColor: gold,
+      pointBorderColor: emerald,
+      pointBorderWidth: 2
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: true,
+    plugins: {
+      legend: { display: false }
+    },
+    scales: {
+      y: {
+        beginAtZero: true,
+        max: 110,
+        grid: { color: 'rgba(0,0,0,0.05)' },
+        title: { display: true, text: 'Intensité spirituelle', font: { size: 12, style: 'italic' } }
+      },
+      x: {
+        grid: { display: false },
+        ticks: { font: { size: 10 }, maxRotation: 40 }
+      }
+    }
+  }
+});
+
+// CHART 3: Sourates sources
+new Chart(document.getElementById('chart-sourates'), {
+  type: 'doughnut',
+  data: {
+    labels: ['Al-Baqara (2)', 'Āl \'Imrān (3)', 'Al-Mu\'minūn (23)', 'Ar-Rūm (30)', 'As-Sajda (32)', 'Al-Mā\'ūn (107)'],
+    datasets: [{
+      data: [25, 30, 20, 10, 10, 5],
+      backgroundColor: [emerald, gold, sacredBlue, burgundy, emeraldDark, goldLight],
+      borderWidth: 2,
+      borderColor: '#FAF7F0'
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: true,
+    plugins: {
+      legend: {
+        position: 'bottom',
+        labels: { padding: 16, font: { size: 12 } }
+      }
+    }
+  }
+});
+
+// CHART 4: Criteria radar
+new Chart(document.getElementById('chart-criteria'), {
+  type: 'radar',
+  data: {
+    labels: ['Khushū\' (Humilité)', 'Anti-Laghw (Futilités)', 'Zakāt', 'Chasteté', 'Amāna (Dépôts)', 'Ṣalawāt (Prières)', 'Héritage Firdaws'],
+    datasets: [{
+      label: 'Idéal coranique (Sourate 23)',
+      data: [10, 10, 10, 10, 10, 10, 10],
+      backgroundColor: 'rgba(201,163,81,0.15)',
+      borderColor: gold,
+      borderWidth: 2,
+      pointBackgroundColor: gold,
+      pointRadius: 5
+    }, {
+      label: 'Réalité contemporaine (estimée)',
+      data: [3, 2, 3, 2, 4, 5, 0],
+      backgroundColor: 'rgba(107,29,42,0.1)',
+      borderColor: burgundy,
+      borderWidth: 2,
+      pointBackgroundColor: burgundy,
+      pointRadius: 5
+    }, {
+      label: 'Effet du Khassida (visé)',
+      data: [8, 7, 8, 7, 8, 9, 10],
+      backgroundColor: 'rgba(27,107,74,0.1)',
+      borderColor: emerald,
+      borderWidth: 2,
+      pointBackgroundColor: emerald,
+      pointRadius: 5
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: true,
+    scales: {
+      r: {
+        beginAtZero: true,
+        max: 10,
+        ticks: { stepSize: 2, font: { size: 10 } },
+        pointLabels: { font: { size: 11 } },
+        grid: { color: 'rgba(0,0,0,0.08)' }
+      }
+    },
+    plugins: {
+      legend: {
+        position: 'bottom',
+        labels: { padding: 14, font: { size: 12 } }
+      }
+    }
+  }
+});
+
+// CHART 5: Retribution
+new Chart(document.getElementById('chart-retribution'), {
+  type: 'polarArea',
+  data: {
+    labels: ['Ajr (Récompense quantitative)', 'Thawāb (Mérite qualitatif)', 'Jazā\' (Correspondance exacte)'],
+    datasets: [{
+      data: [90, 75, 100],
+      backgroundColor: [
+        'rgba(201,163,81,0.6)',
+        'rgba(27,107,74,0.6)',
+        'rgba(26,58,92,0.6)'
+      ],
+      borderWidth: 2,
+      borderColor: '#FAF7F0'
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: true,
+    plugins: {
+      legend: {
+        position: 'bottom',
+        labels: { padding: 16, font: { size: 12 } }
+      }
+    },
+    scales: {
+      r: {
+        ticks: { display: false },
+        grid: { color: 'rgba(0,0,0,0.06)' }
+      }
+    }
+  }
+});
+
+// CHART 6: Pardon levels
+new Chart(document.getElementById('chart-pardon'), {
+  type: 'bar',
+  data: {
+    labels: ['Niveau 1: Pardon simple', 'Niveau 2: Pardon + Effacement', 'Niveau 3: Pardon + Effacement + Remplacement'],
+    datasets: [
+      {
+        label: 'Péché pardonné',
+        data: [100, 100, 100],
+        backgroundColor: goldLight,
+        borderRadius: 2
+      },
+      {
+        label: 'Trace effacée',
+        data: [0, 100, 100],
+        backgroundColor: emerald,
+        borderRadius: 2
+      },
+      {
+        label: 'Bonne action inscrite',
+        data: [0, 0, 100],
+        backgroundColor: sacredBlue,
+        borderRadius: 2
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: true,
+    indexAxis: 'y',
+    plugins: {
+      legend: {
+        position: 'bottom',
+        labels: { padding: 14, font: { size: 12 } }
+      }
+    },
+    scales: {
+      x: {
+        stacked: true,
+        max: 300,
+        grid: { color: 'rgba(0,0,0,0.05)' },
+        ticks: { display: false }
+      },
+      y: {
+        stacked: true,
+        grid: { display: false },
+        ticks: { font: { size: 11 } }
+      }
+    }
+  }
+});
+
+// CHART 7: Vers unique - 4 acts
+new Chart(document.getElementById('chart-vers-unique'), {
+  type: 'bar',
+  data: {
+    labels: ['Dhikr Allāh\n(Mention de Dieu)', 'Ṣalāt\n(Prière sur le Prophète)', 'Taslīm\n(Salutation)', 'Madḥ\n(Éloge du Prophète)'],
+    datasets: [{
+      label: 'Présence dans un vers classique',
+      data: [1, 1, 0, 0],
+      backgroundColor: 'rgba(201,163,81,0.3)',
+      borderColor: gold,
+      borderWidth: 1,
+      borderRadius: 2
+    }, {
+      label: 'Présence dans le vers de Serigne Touba',
+      data: [1, 1, 1, 1],
+      backgroundColor: emerald,
+      borderColor: emeraldDark,
+      borderWidth: 1,
+      borderRadius: 2
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: true,
+    plugins: {
+      legend: {
+        position: 'bottom',
+        labels: { padding: 14, font: { size: 12 } }
+      }
+    },
+    scales: {
+      y: {
+        beginAtZero: true,
+        max: 1.5,
+        ticks: {
+          callback: function(value) { return value === 0 ? 'Absent' : value === 1 ? 'Présent' : ''; },
+          stepSize: 1
+        },
+        grid: { color: 'rgba(0,0,0,0.05)' }
+      },
+      x: {
+        grid: { display: false },
+        ticks: { font: { size: 11 } }
+      }
+    }
+  }
+});
+
+// CHART 8: Chronologie spirituelle
+new Chart(document.getElementById('chart-chronologie'), {
+  type: 'bar',
+  data: {
+    labels: [
+      'Naissance\n(1853)',
+      'Fondation Touba\n(1887)',
+      'Exil Gabon\n(1895)',
+      'Mayumba\n(1895-1900)',
+      'Lambaréné\n(1900-1902)',
+      'Retour triomphal\n(1902)',
+      'Exil Mauritanie\n(1903-1907)',
+      'Résidence Diourbel\n(1907-1927)',
+      'Rappel à Dieu\n(1927)'
+    ],
+    datasets: [{
+      label: 'Intensité des épreuves (balā\')',
+      data: [0, 10, 60, 95, 100, 20, 70, 30, 0],
+      backgroundColor: burgundy + '99',
+      borderColor: burgundy,
+      borderWidth: 1,
+      borderRadius: 2,
+      order: 2
+    }, {
+      label: 'Élévation spirituelle (maqām)',
+      data: [15, 30, 50, 70, 85, 88, 92, 96, 100],
+      type: 'line',
+      borderColor: gold,
+      backgroundColor: 'rgba(201,163,81,0.1)',
+      fill: true,
+      tension: 0.4,
+      pointRadius: 6,
+      pointBackgroundColor: gold,
+      pointBorderColor: ink,
+      pointBorderWidth: 2,
+      order: 1
+    }, {
+      label: 'Production littéraire',
+      data: [0, 15, 40, 80, 90, 50, 60, 85, 0],
+      type: 'line',
+      borderColor: emerald,
+      borderDash: [5, 5],
+      fill: false,
+      tension: 0.3,
+      pointRadius: 4,
+      pointBackgroundColor: emerald,
+      order: 1
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: true,
+    plugins: {
+      legend: {
+        position: 'bottom',
+        labels: { padding: 14, font: { size: 12 } }
+      }
+    },
+    scales: {
+      y: {
+        beginAtZero: true,
+        max: 110,
+        grid: { color: 'rgba(0,0,0,0.05)' },
+        ticks: { display: false }
+      },
+      x: {
+        grid: { display: false },
+        ticks: { font: { size: 10 }, maxRotation: 45 }
+      }
+    }
+  }
+});
+</script>
+
+</body>
+</html>

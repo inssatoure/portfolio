@@ -1,0 +1,1358 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Al-Himma — La Haute Aspiration Spirituelle | Analyse de la conférence de Serigne Khadim Syll</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Noto+Naskh+Arabic:wght@400;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+:root {
+  --gold: #C9A351;
+  --gold-light: #E8D5A3;
+  --gold-dark: #8B6F2E;
+  --ink: #1A1612;
+  --parchment: #F5F0E8;
+  --parchment-dark: #E8DFD0;
+  --emerald: #1B6B4A;
+  --emerald-dark: #0D4A30;
+  --burgundy: #6B1D2A;
+  --cream: #FAF7F0;
+  --shadow: rgba(26, 22, 18, 0.12);
+  --sacred-blue: #1A3A5C;
+  --sacred-blue-light: #2A5A8C;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+.pattern-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.02;
+  background-image:
+    repeating-conic-gradient(from 0deg at 50% 50%, transparent 0deg 30deg, var(--gold) 30deg 32deg, transparent 32deg 60deg);
+  background-size: 80px 80px;
+}
+
+/* === HERO === */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(175deg, var(--ink) 0%, #2A2420 40%, var(--emerald-dark) 100%);
+  padding: 4rem 2rem;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%; left: -50%;
+  width: 200%; height: 200%;
+  background: 
+    radial-gradient(ellipse at 30% 20%, rgba(201,163,81,0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 80%, rgba(27,107,74,0.06) 0%, transparent 50%);
+  animation: heroShimmer 20s ease-in-out infinite alternate;
+}
+
+@keyframes heroShimmer {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(-2%, -1%) rotate(1deg); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-bismillah {
+  font-family: 'Noto Naskh Arabic', 'Amiri', serif;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  color: var(--gold);
+  margin-bottom: 1rem;
+  position: relative; z-index: 1;
+  opacity: 0; animation: fadeUp 1.2s ease 0.3s forwards;
+}
+
+.hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.2rem, 5vw, 4.2rem);
+  font-weight: 300;
+  color: var(--parchment);
+  max-width: 900px;
+  line-height: 1.25;
+  margin-bottom: 1.5rem;
+  position: relative; z-index: 1;
+  opacity: 0; animation: fadeUp 1.2s ease 0.6s forwards;
+}
+
+.hero-title em { font-style: italic; color: var(--gold); font-weight: 600; }
+
+.hero-subtitle {
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  color: var(--gold-light);
+  max-width: 700px;
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  position: relative; z-index: 1;
+  opacity: 0; animation: fadeUp 1.2s ease 0.9s forwards;
+}
+
+.hero-conferencier {
+  font-size: 1.15rem;
+  color: var(--parchment-dark);
+  margin-top: 1rem;
+  font-style: italic;
+  position: relative; z-index: 1;
+  opacity: 0; animation: fadeUp 1.2s ease 1s forwards;
+}
+
+.hero-verse {
+  font-family: 'Noto Naskh Arabic', 'Amiri', serif;
+  font-size: clamp(1.5rem, 3.5vw, 2.6rem);
+  color: var(--gold);
+  margin-top: 3rem;
+  padding: 2rem 3rem;
+  border: 1px solid rgba(201,163,81,0.2);
+  position: relative; z-index: 1;
+  opacity: 0; animation: fadeUp 1.2s ease 1.2s forwards;
+  direction: rtl;
+  max-width: 800px;
+}
+
+.hero-verse-trans {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  color: var(--parchment-dark);
+  font-style: italic;
+  margin-top: 0.8rem;
+  direction: ltr; font-weight: 300;
+}
+
+.hero-ornament {
+  width: 120px; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  margin: 2rem auto;
+  position: relative; z-index: 1;
+  opacity: 0; animation: fadeUp 1s ease 1.5s forwards;
+}
+
+/* === LAYOUT === */
+.content-wrapper {
+  position: relative; z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+section { padding: 5rem 0; }
+
+.section-header { text-align: center; margin-bottom: 4rem; }
+
+.section-number {
+  font-size: 0.85rem; letter-spacing: 0.3em;
+  text-transform: uppercase; color: var(--gold-dark);
+  display: block; margin-bottom: 0.5rem;
+}
+
+.section-title {
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 300; color: var(--ink); line-height: 1.3;
+}
+
+.section-title em { color: var(--emerald-dark); font-style: italic; font-weight: 600; }
+
+.divider { width: 80px; height: 1px; background: var(--gold); margin: 1.5rem auto; }
+
+/* === CARDS === */
+.analysis-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 2.5rem; margin: 3rem 0;
+}
+
+.card {
+  background: white;
+  border: 1px solid var(--parchment-dark);
+  padding: 2.5rem;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px var(--shadow);
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 4px; height: 100%;
+  background: linear-gradient(180deg, var(--gold), var(--emerald));
+}
+
+.card-label {
+  font-size: 0.75rem; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--gold-dark); margin-bottom: 0.8rem;
+}
+
+.card h3 { font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem; }
+.card p { font-size: 1.05rem; line-height: 1.8; color: #4A433A; }
+
+/* === ARABIC BLOCKS === */
+.arabic-block {
+  background: linear-gradient(135deg, var(--ink), #2A2420);
+  color: var(--parchment);
+  padding: 3rem; text-align: center;
+  margin: 3rem 0; position: relative; overflow: hidden;
+}
+
+.arabic-block::before {
+  content: '﴿';
+  position: absolute; top: -20px; left: 20px;
+  font-family: 'Noto Naskh Arabic', serif;
+  font-size: 8rem; color: rgba(201,163,81,0.06);
+}
+
+.arabic-block .arabic-text {
+  font-family: 'Noto Naskh Arabic', 'Amiri', serif;
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  color: var(--gold); direction: rtl; line-height: 2; margin-bottom: 1rem;
+}
+
+.arabic-block .translation {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem; font-style: italic; color: var(--gold-light); font-weight: 300;
+}
+
+.arabic-block .reference {
+  font-size: 0.85rem; color: rgba(245,240,232,0.5);
+  margin-top: 1rem; letter-spacing: 0.1em;
+}
+
+/* === TABLES === */
+.data-table-wrapper { overflow-x: auto; margin: 2rem 0; }
+
+table { width: 100%; border-collapse: collapse; font-size: 1rem; }
+
+table thead { background: var(--ink); color: var(--gold-light); }
+
+table th {
+  padding: 1rem 1.5rem; text-align: left;
+  font-weight: 600; font-size: 0.85rem;
+  letter-spacing: 0.1em; text-transform: uppercase;
+}
+
+table td {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--parchment-dark);
+  vertical-align: top;
+}
+
+table tbody tr:nth-child(even) { background: var(--parchment); }
+table tbody tr:hover { background: var(--parchment-dark); }
+
+td.arabic {
+  font-family: 'Noto Naskh Arabic', 'Amiri', serif;
+  direction: rtl; font-size: 1.15rem; color: var(--emerald-dark);
+}
+
+td.number { font-weight: 700; color: var(--gold-dark); font-size: 1.3rem; text-align: center; }
+td.highlight { background: rgba(201,163,81,0.08); font-weight: 600; }
+
+/* === CHARTS === */
+.chart-container {
+  background: white;
+  border: 1px solid var(--parchment-dark);
+  padding: 2rem; margin: 2rem 0;
+}
+
+.chart-container h4 { font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem; }
+
+.chart-container .chart-subtitle {
+  font-size: 0.9rem; color: #8A8070; margin-bottom: 1.5rem;
+}
+
+.chart-canvas-wrapper { position: relative; max-height: 420px; }
+
+/* === STAT BOXES === */
+.miracle-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem; margin: 3rem 0;
+}
+
+.stat-box {
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  background: white;
+  border: 1px solid var(--parchment-dark);
+  position: relative;
+}
+
+.stat-box::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 50%; transform: translateX(-50%);
+  width: 40px; height: 3px; background: var(--gold);
+}
+
+.stat-number {
+  font-size: 3.5rem; font-weight: 700;
+  color: var(--emerald-dark); line-height: 1; margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 0.85rem; letter-spacing: 0.15em;
+  text-transform: uppercase; color: var(--gold-dark);
+}
+
+.stat-detail {
+  font-size: 0.95rem; color: #6A6050; margin-top: 0.5rem; font-style: italic;
+}
+
+/* === FLOW DIAGRAM === */
+.flow-diagram {
+  display: flex; flex-wrap: wrap;
+  justify-content: center; align-items: center;
+  gap: 1rem; margin: 3rem 0; padding: 2rem;
+  background: white; border: 1px solid var(--parchment-dark);
+}
+
+.flow-node {
+  background: var(--parchment);
+  border: 2px solid var(--gold);
+  padding: 1.2rem 2rem; text-align: center; min-width: 180px;
+}
+
+.flow-node.primary { background: var(--ink); color: var(--gold); }
+.flow-node.sacred { background: var(--emerald-dark); color: var(--gold-light); }
+
+.flow-node h5 { font-size: 1rem; margin-bottom: 0.3rem; }
+.flow-node span { font-size: 0.85rem; opacity: 0.8; }
+
+.flow-arrow { font-size: 1.5rem; color: var(--gold); }
+
+/* === PROSE === */
+.prose {
+  max-width: 780px; margin: 0 auto;
+  font-size: 1.15rem; line-height: 2; color: #3A3428;
+}
+
+.prose p { margin-bottom: 1.5rem; }
+.prose strong { color: var(--emerald-dark); font-weight: 600; }
+
+.prose .inline-arabic {
+  font-family: 'Noto Naskh Arabic', 'Amiri', serif;
+  color: var(--gold-dark); font-size: 1.1em; direction: rtl; display: inline;
+}
+
+/* === LESSON BOX === */
+.lesson-box {
+  background: linear-gradient(135deg, var(--emerald-dark), var(--sacred-blue));
+  color: var(--parchment);
+  padding: 2.5rem;
+  margin: 2rem 0;
+  position: relative;
+}
+
+.lesson-box::before {
+  content: '';
+  position: absolute; top: 0; left: 0;
+  width: 4px; height: 100%;
+  background: var(--gold);
+}
+
+.lesson-box h4 {
+  color: var(--gold);
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.lesson-box p {
+  font-size: 1.1rem;
+  line-height: 1.9;
+  color: var(--parchment);
+}
+
+/* === FOOTER === */
+footer {
+  background: var(--ink);
+  color: var(--parchment-dark);
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+footer .footer-verse {
+  font-family: 'Noto Naskh Arabic', 'Amiri', serif;
+  font-size: 1.6rem; color: var(--gold); direction: rtl; margin-bottom: 1rem;
+}
+
+footer p {
+  font-size: 0.95rem; line-height: 1.8;
+  max-width: 600px; margin: 0 auto; opacity: 0.7;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .analysis-grid { grid-template-columns: 1fr; }
+  .flow-diagram { flex-direction: column; }
+  .flow-arrow { transform: rotate(90deg); }
+  .hero { padding: 3rem 1.5rem; }
+  section { padding: 3rem 0; }
+  .card { padding: 1.8rem; }
+  .miracle-stats { grid-template-columns: repeat(2, 1fr); }
+}
+</style>
+</head>
+<body>
+
+<div class="pattern-overlay"></div>
+
+<!-- ============================================ -->
+<!-- HERO -->
+<!-- ============================================ -->
+<header class="hero">
+  <div class="hero-bismillah">بِسْمِ اللَّهِ الرَّحْمَـٰنِ الرَّحِيمِ</div>
+  <div class="hero-ornament"></div>
+  <h1 class="hero-title"><em>Al-Himma</em> — La Haute Aspiration Spirituelle</h1>
+  <p class="hero-subtitle">Moteur de l'élévation dans la voie de Khadimou Rassoul</p>
+  <p class="hero-conferencier">Conférence de Serigne Khadim Syll — Journée dédiée à Serigne Massamba Asta</p>
+  <div class="hero-verse">
+    <div class="arabic-text">رَبِّ أَدْخِلْنِي مُدْخَلَ صِدْقٍ وَأَخْرِجْنِي مُخْرَجَ صِدْقٍ وَاجْعَل لِّي مِن لَّدُنكَ سُلْطَانًا نَّصِيرًا</div>
+    <div class="hero-verse-trans">« Mon Seigneur, fais-moi entrer par une entrée de vérité et sortir par une sortie de vérité, et accorde-moi de Ta part une autorité secourable » — Coran 17:80</div>
+  </div>
+</header>
+
+<div class="content-wrapper">
+
+<!-- ============================================ -->
+<!-- SECTION I : FONDEMENT CORANIQUE DU SOUVENIR -->
+<!-- ============================================ -->
+<section id="souvenir">
+  <div class="section-header">
+    <span class="section-number">I — Fondement coranique</span>
+    <h2 class="section-title">La légitimité du <em>souvenir des saints</em></h2>
+    <div class="divider"></div>
+  </div>
+
+  <div class="prose">
+    <p>Serigne Khadim Syll ouvre la conférence en établissant le fondement coranique de la commémoration des hommes de Dieu. Contre l'accusation d'innovation blâmable (<em>bid'a</em>), il démontre que le Coran lui-même ordonne le rappel des jours de Dieu et l'étude des récits des prédécesseurs. Cette légitimation est triple : <strong>le Coran l'enseigne</strong>, <strong>le Coran le permet</strong>, et <strong>le Coran le recommande</strong>.</p>
+  </div>
+
+  <div class="arabic-block">
+    <div class="arabic-text">وَذَكِّرْهُم بِأَيَّامِ اللَّهِ ۚ إِنَّ فِي ذَٰلِكَ لَآيَاتٍ لِّكُلِّ صَبَّارٍ شَكُورٍ</div>
+    <div class="translation">« Et rappelle-leur les jours d'Allah ; il y a certes là des signes pour tout homme plein d'endurance et de reconnaissance »</div>
+    <div class="reference">Coran 14:5 — Sourate Ibrāhīm</div>
+  </div>
+
+  <div class="arabic-block">
+    <div class="arabic-text">لَقَدْ كَانَ فِي قَصَصِهِمْ عِبْرَةٌ لِّأُولِي الْأَلْبَابِ ۗ مَا كَانَ حَدِيثًا يُفْتَرَىٰ</div>
+    <div class="translation">« Dans leurs récits, il y a certes une leçon pour les doués d'intelligence. Ce n'est point un récit inventé... »</div>
+    <div class="reference">Coran 12:111 — Sourate Yūsuf</div>
+  </div>
+
+  <div class="data-table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>Argument coranique</th>
+          <th>Verset</th>
+          <th>Ce qu'il légitime</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>L'ordre du rappel</strong></td>
+          <td>Ibrāhīm 14:5</td>
+          <td>Se souvenir des « jours d'Allah » — les événements où Dieu a manifesté Sa puissance à travers Ses serviteurs</td>
+        </tr>
+        <tr>
+          <td><strong>La leçon des récits</strong></td>
+          <td>Yūsuf 12:111</td>
+          <td>Tirer des enseignements ('ibra) de la vie des saints pour les doués d'intelligence</td>
+        </tr>
+        <tr>
+          <td><strong>La confirmation, pas l'invention</strong></td>
+          <td>Yūsuf 12:111</td>
+          <td>Ces récits confirment la tradition prophétique — ils ne sont pas de la bid'a</td>
+        </tr>
+        <tr>
+          <td><strong>La guidance et la miséricorde</strong></td>
+          <td>Yūsuf 12:111</td>
+          <td>Les récits des saints sont une guidance (hudā) et une miséricorde (raḥma)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="lesson-box">
+    <h4>Leçon à retenir</h4>
+    <p>La commémoration des saints n'est pas une innovation — c'est une injonction coranique. Mais elle a une méthode : non pas la simple célébration festive, mais l'étude de <strong>comment</strong> ces hommes ont cheminé vers Dieu, afin que les vivants puissent s'en inspirer. Le « comment » est plus important que le « qui ».</p>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- SECTION II : POURQUOI LE CIEL PLEURE -->
+<!-- ============================================ -->
+<section id="ciel-pleure">
+  <div class="section-header">
+    <span class="section-number">II — Cosmologie du deuil</span>
+    <h2 class="section-title">Pourquoi les <em>cieux et la terre</em> pleurent les saints</h2>
+    <div class="divider"></div>
+  </div>
+
+  <div class="prose">
+    <p>Serigne Khadim Syll rapporte l'enseignement de Khadimou Rassoul selon lequel, lorsqu'un homme de Dieu quitte ce monde, <strong>les cieux et la terre pleurent</strong> sa disparition. Cette affirmation n'est pas métaphorique — elle s'appuie sur le Coran (44:29) et sur une compréhension cosmologique profonde de la relation entre le saint, la terre et les cieux.</p>
+  </div>
+
+  <div class="arabic-block">
+    <div class="arabic-text">فَمَا بَكَتْ عَلَيْهِمُ السَّمَاءُ وَالْأَرْضُ وَمَا كَانُوا مُنظَرِينَ</div>
+    <div class="translation">« Ni le ciel ni la terre ne les pleurèrent, et ils n'eurent aucun répit »</div>
+    <div class="reference">Coran 44:29 — Sourate ad-Dukhān — Dit à propos de Pharaon et de ses gens</div>
+  </div>
+
+  <div class="prose">
+    <p>Le Coran affirme que le ciel et la terre <strong>n'ont pas pleuré</strong> les gens de Pharaon. L'interprétation classique (<em>tafsīr</em>) — notamment celle d'Ibn 'Abbās (rapportée par al-Ḥākim) — en déduit par contraste que <strong>le ciel et la terre pleurent effectivement les croyants pieux</strong> lorsqu'ils meurent. Si le Coran précise que le cosmos ne pleure pas les impies, c'est que, pour les pieux, il pleure bien.</p>
+  </div>
+
+  <div class="analysis-grid">
+    <div class="card">
+      <div class="card-label">Raison terrestre</div>
+      <h3>La terre perd ses adorateurs</h3>
+      <p>Les actes de dévotion, les prosternations, les prières, les invocations nocturnes — tout cela imprégnait la terre. Quand le saint meurt, la terre qui le portait perd une source de bénédiction irremplaçable. Elle se « sent seule », comme l'exprime le conférencier.</p>
+    </div>
+    <div class="card">
+      <div class="card-label">Raison céleste</div>
+      <h3>Les cieux perdent leurs lumières</h3>
+      <p>Les œuvres des saints s'élevaient vers les cieux sous forme de lumières spirituelles (anwār), nourries et transportées par les anges. À la mort du saint, cette élévation s'interrompt — les cieux ne reçoivent plus cette lumière spécifique.</p>
+    </div>
+    <div class="card">
+      <div class="card-label">Corroboration exégétique</div>
+      <h3>Ibn 'Abbās et les lieux de prière</h3>
+      <p>Ibn 'Abbās (raḍiya Allāhu 'anhu) a enseigné que chaque croyant a des endroits sur terre où il priait et des portes dans le ciel par lesquelles montaient ses œuvres — et que ce sont ces lieux et ces portes qui pleurent à sa mort. Rapporté par al-Ḥākim dans al-Mustadrak.</p>
+    </div>
+  </div>
+
+  <div class="chart-container">
+    <h4>La double relation du saint : Terre ↔ Cieux</h4>
+    <p class="chart-subtitle">Le saint comme pont entre le monde terrestre et le monde céleste — et le vide créé par son départ</p>
+    <div class="chart-canvas-wrapper">
+      <canvas id="chart-cosmos"></canvas>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- SECTION III : RELATION AVEC DIEU / CRÉATURES -->
+<!-- ============================================ -->
+<section id="double-relation">
+  <div class="section-header">
+    <span class="section-number">III — Double relation</span>
+    <h2 class="section-title">Les hommes de Dieu : entre le <em>Créateur</em> et les <em>créatures</em></h2>
+    <div class="divider"></div>
+  </div>
+
+  <div class="prose">
+    <p>Le conférencier dévoile, à travers les vers de Khadimou Rassoul, la double relation qui définit les saints : leur relation verticale avec Dieu et leur relation horizontale avec les créatures. Ces deux axes ne sont pas parallèles — c'est la qualité du premier qui détermine l'excellence du second.</p>
+  </div>
+
+  <div class="data-table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>Dimension</th>
+          <th>Enseignement de Khadimou Rassoul</th>
+          <th>Caractéristiques</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Relation avec Dieu</strong><br>(Verticale / 'Ubūdiyya)</td>
+          <td>« Ils étaient des serviteurs dévoués dans l'obéissance à leur Seigneur »</td>
+          <td>Amour exclusif de Dieu, purification de la relation, parachèvement de l'adoration, Dieu prend en charge toutes leurs préoccupations (Coran 30:47)</td>
+        </tr>
+        <tr>
+          <td><strong>Relation avec les créatures</strong><br>(Horizontale / Da'wa)</td>
+          <td>« Nous avons éclairé la voie des hommes de Dieu de manière évidente »</td>
+          <td>Ils ne se mettent pas en avant, ne montrent que Dieu, purifient le disciple, le protègent de la perte, et lui montrent ce qui bonifie sa vie</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="flow-diagram">
+    <div class="flow-node sacred">
+      <h5>Dieu (al-Ḥaqq)</h5>
+      <span>Source de tout</span>
+    </div>
+    <div class="flow-arrow">↕</div>
+    <div class="flow-node primary">
+      <h5>Le Saint (al-Waliyy)</h5>
+      <span>'Ubūdiyya complète</span>
+    </div>
+    <div class="flow-arrow">↕</div>
+    <div class="flow-node">
+      <h5>Le Disciple (al-Murīd)</h5>
+      <span>Guidé, purifié, protégé</span>
+    </div>
+  </div>
+
+  <div class="lesson-box">
+    <h4>Leçon à retenir</h4>
+    <p>Le véritable guide spirituel a trois caractéristiques : <strong>il ne se met pas en avant</strong> (pas d'ego), <strong>il ne montre que Dieu</strong> (pas lui-même ni sa lignée), et <strong>il protège le disciple</strong> de ce qui peut lui nuire dans les deux mondes. Quiconque appelle à lui-même plutôt qu'à Dieu n'est pas sur la voie de ces saints.</p>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- SECTION IV : AL-HIMMA — DÉFINITION -->
+<!-- ============================================ -->
+<section id="himma-definition">
+  <div class="section-header">
+    <span class="section-number">IV — Al-Himma</span>
+    <h2 class="section-title">La haute aspiration : <em>définition et origine prophétique</em></h2>
+    <div class="divider"></div>
+  </div>
+
+  <div class="prose">
+    <p>Le cœur de la conférence est la notion d'<strong>al-Himma</strong> (الهمّة), concept central de la voie mouride. Le conférencier révèle que ce concept n'est pas un choix pédagogique ordinaire de Khadimou Rassoul — c'est une <strong>directive prophétique directe</strong>, reçue lors d'une apparition spirituelle du Prophète ﷺ à Mbacké Cayor.</p>
+  </div>
+
+  <div class="arabic-block">
+    <div class="arabic-text">رَبِّ صَلِّيْ عَلَى النَّبِيِّ الَّذِي أَمَرَنِي أَنْ أُرَبِّيَ أَصْحَابِي بِالْهِمَّةِ لَا بِالدَّرْسِ</div>
+    <div class="translation">« Éduque tes compagnons par la haute aspiration (al-Himma) et non par la simple leçon théorique, car celle-ci a perdu de sa substance »</div>
+    <div class="reference">Directive du Prophète ﷺ à Khadimou Rassoul — Mbacké Cayor</div>
+  </div>
+
+  <div class="miracle-stats">
+    <div class="stat-box">
+      <div class="stat-number">~40</div>
+      <div class="stat-label">Premiers compagnons</div>
+      <div class="stat-detail">Tous issus de Daaras, déjà instruits</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-number">100%</div>
+      <div class="stat-label">Savoir théorique acquis</div>
+      <div class="stat-detail">La connaissance seule ne suffit pas</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-number">الهمّة</div>
+      <div class="stat-label" style="font-size:0.95rem">Al-Himma</div>
+      <div class="stat-detail">La méthode prescrite par le Prophète ﷺ</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-number">≠</div>
+      <div class="stat-label">Dars (leçon théorique)</div>
+      <div class="stat-detail">Insuffisant sans l'élévation intérieure</div>
+    </div>
+  </div>
+
+  <div class="analysis-grid">
+    <div class="card">
+      <div class="card-label">Définition de Khadimou Rassoul</div>
+      <h3>Qu'est-ce que l'Himma ?</h3>
+      <p>L'Himma est le <strong>refus de se considérer indigne d'atteindre le bien</strong>, ici-bas et dans l'au-delà. C'est l'ambition noble (<em>Jom</em>) qui refuse le fatalisme et pousse l'homme à l'effort pour obtenir un haut rang spirituel. C'est une « part immense déposée en l'homme par Dieu ».</p>
+    </div>
+    <div class="card">
+      <div class="card-label">Pourquoi pas la leçon (Dars) ?</div>
+      <h3>Le savoir sans Himma : un obstacle</h3>
+      <p>Les premiers compagnons maîtrisaient déjà le savoir religieux. Mais le savoir non accompagné de l'élévation intérieure peut engendrer <strong>l'orgueil, la vanité et le mépris des autres</strong> — devenant alors une cause de perdition au lieu d'un moyen d'élévation.</p>
+    </div>
+    <div class="card">
+      <div class="card-label">Corroboration coranique</div>
+      <h3>Le savoir qui égare</h3>
+      <p>Le Coran avertit : <em>« Celui qui prend sa passion pour divinité, que Dieu égare en connaissance de cause... »</em> (Q. 45:23). Également : <em>« Parmi Ses serviteurs, seuls les savants craignent Dieu »</em> (Q. 35:28) — le vrai savoir mène à la crainte, pas à l'arrogance.</p>
+    </div>
+  </div>
+
+  <div class="chart-container">
+    <h4>Savoir (al-'Ilm) vs Aspiration (al-Himma) : deux voies, deux résultats</h4>
+    <p class="chart-subtitle">Le savoir seul peut mener à l'orgueil ; combiné à l'Himma, il mène à l'élévation</p>
+    <div class="chart-canvas-wrapper">
+      <canvas id="chart-ilm-himma"></canvas>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- SECTION V : LES 10 PRINCIPES DU SAALIK -->
+<!-- ============================================ -->
+<section id="dix-principes">
+  <div class="section-header">
+    <span class="section-number">V — Les Dix Principes du Sālik</span>
+    <h2 class="section-title">Les fondements du <em>cheminement spirituel</em></h2>
+    <div class="divider"></div>
+  </div>
+
+  <div class="prose">
+    <p>Le conférencier mentionne que Khadimou Rassoul a énuméré <strong>dix principes incontournables</strong> pour le cheminant spirituel (<em>sālik</em>). Parmi ces dix, un principe est mis en exergue pour sa pertinence directe avec l'assemblée : <strong>la fraternité sincère entre aspirants partageant de hautes ambitions</strong>.</p>
+  </div>
+
+  <div class="arabic-block">
+    <div class="arabic-text">وَرُفْقَةٌ إِخْوَانٌ لَهُمْ هِمَمٌ مَعَ الصِّدْقِ وَالْإِخْلَاصِ فِي الْأُخُوَّةِ</div>
+    <div class="translation">« Et une fraternité sincère ; ce sont des frères qui partagent de hautes aspirations, avec fidélité et sincérité dans leur fraternité »</div>
+    <div class="reference">Khadimou Rassoul — Parmi les 10 principes du Sālik</div>
+  </div>
+
+  <div class="data-table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th style="width:40px">#</th>
+          <th>Condition (Sharṭ)</th>
+          <th>Explication du conférencier</th>
+          <th>Corroboration</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="number">1</td>
+          <td><strong>Ikhwān</strong> (Fraternité)</td>
+          <td>S'aimer comme des frères, indépendamment des origines sociales ou des couleurs</td>
+          <td>Coran 49:10 — « Les croyants ne sont que des frères »</td>
+        </tr>
+        <tr>
+          <td class="number">2</td>
+          <td><strong>Himam</strong> (Aspirations partagées)</td>
+          <td>Partager de hautes ambitions spirituelles, sans jamais se rabaisser collectivement</td>
+          <td>Hadith : « L'homme est sur la religion de son ami intime » (Abū Dāwūd, Tirmidhī)</td>
+        </tr>
+        <tr>
+          <td class="number">3</td>
+          <td><strong>Ṣidq</strong> (Véracité)</td>
+          <td>La sincérité dans les intentions et les actes qui soudent le groupe</td>
+          <td>Coran 9:119 — « Soyez avec les véridiques »</td>
+        </tr>
+        <tr>
+          <td class="number">4</td>
+          <td><strong>Ikhlāṣ</strong> (Sincérité)</td>
+          <td>Purifier la fraternité de tout intérêt mondain — ne la fonder que sur l'amour de Dieu</td>
+          <td>Coran 98:5 — « Il ne leur a été commandé que d'adorer Dieu, Lui vouant un culte exclusif »</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="prose">
+    <p>Le conférencier insiste : <strong>nul ne peut réussir seul dans la quête spirituelle</strong>. C'est le sens même des Daaras, des associations et des assemblées de rappel. Ce qui te manque, un autre l'a. Cette complémentarité est vitale. Mais elle ne peut fonctionner que si elle repose sur les quatre piliers ci-dessus : fraternité, aspiration commune, véracité et sincérité.</p>
+  </div>
+
+  <div class="chart-container">
+    <h4>Les 4 piliers de la fraternité spirituelle</h4>
+    <p class="chart-subtitle">D'après le principe du Sālik enseigné par Khadimou Rassoul</p>
+    <div class="chart-canvas-wrapper">
+      <canvas id="chart-piliers"></canvas>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- SECTION VI : REFUS DE LA STAGNATION -->
+<!-- ============================================ -->
+<section id="stagnation">
+  <div class="section-header">
+    <span class="section-number">VI — Le refus de la stagnation</span>
+    <h2 class="section-title">Dépasser ses ancêtres : une <em>obligation spirituelle</em></h2>
+    <div class="divider"></div>
+  </div>
+
+  <div class="prose">
+    <p>L'un des enseignements les plus puissants de la conférence est l'avertissement contre la stagnation héréditaire. Le conférencier cite un principe fondamental de Khadimou Rassoul :</p>
+  </div>
+
+  <div class="arabic-block">
+    <div class="arabic-text">مَنِ اكْتَفَى بِأَنْ يُشَابِهَ سَلَفَهُ فَقَدْ وَقَفَ عَنِ السَّيْرِ نَحْوَ التَّقَدُّمِ</div>
+    <div class="translation">« Celui qui se contente de ressembler à ses prédécesseurs s'est arrêté de marcher vers le progrès »</div>
+    <div class="reference">Khadimou Rassoul — Au nom du Serviteur du Messager de Dieu</div>
+  </div>
+
+  <div class="analysis-grid">
+    <div class="card">
+      <div class="card-label">Le piège de l'héritage passif</div>
+      <h3>« C'est fini pour nous ! »</h3>
+      <p>La tentation est de se dire : nos ancêtres ont déjà accompli les grandes œuvres. Le conférencier identifie cette pensée comme le <strong>piège mortel</strong> de l'Himma : croire que le passé suffit et qu'il n'y a plus rien à conquérir.</p>
+    </div>
+    <div class="card">
+      <div class="card-label">L'ambition correcte</div>
+      <h3>Que l'ancêtre soit fier</h3>
+      <p>L'objectif n'est pas d'égaler les anciens mais de les <strong>surpasser dans les œuvres</strong>. « Il faut redoubler d'efforts pour que, si votre ancêtre regarde derrière lui, il soit fier de voir que vous avez surpassé ses œuvres. »</p>
+    </div>
+  </div>
+
+  <div class="chart-container">
+    <h4>Trois trajectoires possibles face à l'héritage spirituel</h4>
+    <p class="chart-subtitle">Stagnation, régression ou progression — selon le niveau d'Himma</p>
+    <div class="chart-canvas-wrapper">
+      <canvas id="chart-trajectoires"></canvas>
+    </div>
+  </div>
+
+  <div class="lesson-box">
+    <h4>Leçon à retenir</h4>
+    <p>L'héritage spirituel n'est pas un capital qu'on possède — c'est une fondation sur laquelle on bâtit. L'enfant de Serigne Mbiriina n'a pas le droit de se reposer sur la grandeur de son ancêtre. Il a le <strong>devoir</strong> de la dépasser. C'est la seule manière de la préserver.</p>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- SECTION VII : HIMMA CONTRE LA FITNA -->
+<!-- ============================================ -->
+<section id="fitna">
+  <div class="section-header">
+    <span class="section-number">VII — L'Himma face aux troubles</span>
+    <h2 class="section-title">L'arme spirituelle contre la <em>Fitna contemporaine</em></h2>
+    <div class="divider"></div>
+  </div>
+
+  <div class="prose">
+    <p>Le conférencier établit l'Himma comme l'arme indispensable face à la prolifération des troubles (<em>fitna</em>) de notre époque. Il identifie plusieurs formes de désorientations contemporaines et prescrit le retour aux fondements comme unique remède.</p>
+  </div>
+
+  <div class="data-table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>Fitna identifiée</th>
+          <th>Description</th>
+          <th>Remède par l'Himma</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>La confusion des voies</strong></td>
+          <td>Fausses doctrines, ce qui a l'apparence de la religion sans en être l'essence</td>
+          <td>Revenir aux sources : Coran, Sunna, écrits de Serigne Touba</td>
+        </tr>
+        <tr>
+          <td><strong>La perte de direction</strong></td>
+          <td>« Beaucoup ont perdu le sens de la direction » — on ne sait plus où l'on va</td>
+          <td>« Celui qui ne sait plus où il va doit retourner d'où il vient »</td>
+        </tr>
+        <tr>
+          <td><strong>L'arrogance matérielle</strong></td>
+          <td>Utiliser la richesse pour se croire supérieur au guide spirituel</td>
+          <td>La richesse doit servir à honorer le spirituel, pas à le dominer</td>
+        </tr>
+        <tr>
+          <td><strong>L'inversion des valeurs</strong></td>
+          <td>Les critères de noblesse limités au matériel et aux apparences</td>
+          <td>Revenir aux valeurs des gens de Tayba : Coran, 'ibāda, travail, justice</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="chart-container">
+    <h4>L'Himma comme bouclier : les cercles de protection</h4>
+    <p class="chart-subtitle">L'aspiration spirituelle protège progressivement contre les niveaux de Fitna</p>
+    <div class="chart-canvas-wrapper">
+      <canvas id="chart-fitna"></canvas>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- SECTION VIII : LE MODÈLE DE TAYBA -->
+<!-- ============================================ -->
+<section id="tayba">
+  <div class="section-header">
+    <span class="section-number">VIII — Le modèle de Tayba</span>
+    <h2 class="section-title">Les fondations d'une <em>cité spirituelle</em></h2>
+    <div class="divider"></div>
+  </div>
+
+  <div class="prose">
+    <p>Le conférencier décrit le modèle civilisationnel des premiers fondateurs — les gens de Tayba — comme un archétype de société islamique que l'époque actuelle a perdu et qu'il faut reconquérir. Ce modèle repose sur des principes fondateurs que le conférencier énumère avec précision.</p>
+  </div>
+
+  <div class="miracle-stats">
+    <div class="stat-box">
+      <div class="stat-number" style="font-size:2.2rem;">📖</div>
+      <div class="stat-label">Coran</div>
+      <div class="stat-detail">Enseignement et récitation</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-number" style="font-size:2.2rem;">🤲</div>
+      <div class="stat-label">'Ibāda</div>
+      <div class="stat-detail">Adoration exclusive de Dieu</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-number" style="font-size:2.2rem;">⚒</div>
+      <div class="stat-label">Travail</div>
+      <div class="stat-detail">Labeur honnête et productif</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-number" style="font-size:2.2rem;">⚖</div>
+      <div class="stat-label">Justice</div>
+      <div class="stat-detail">Droiture et respect mutuel</div>
+    </div>
+  </div>
+
+  <div class="data-table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>Principe fondateur de Tayba</th>
+          <th>Application concrète</th>
+          <th>Menace contemporaine</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Terrain vierge de désobéissance</strong></td>
+          <td>Ils s'installaient dans des endroits où aucun péché n'avait été commis</td>
+          <td>Les lieux sacrés envahis par les distractions mondaines</td>
+        </tr>
+        <tr>
+          <td><strong>Fraternité par la foi, pas par le sang</strong></td>
+          <td>Le critère d'intégration était la droiture morale, pas l'origine sociale</td>
+          <td>La parenté biologique primerait sur la parenté spirituelle</td>
+        </tr>
+        <tr>
+          <td><strong>Épreuve d'intégrité (Fayda)</strong></td>
+          <td>Tout immigrant était testé sur sa droiture avant d'être intégré</td>
+          <td>L'accueil sans discernement, la compromission</td>
+        </tr>
+        <tr>
+          <td><strong>Paroles orientées vers le Coran</strong></td>
+          <td>La vivification de la Sunna et le détachement des futilités</td>
+          <td>Les conversations mondaines envahissent les assemblées religieuses</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="lesson-box">
+    <h4>Leçon à retenir</h4>
+    <p>Les fondateurs ne choisissaient pas leurs frères par le sang mais par la foi et la doctrine. Quiconque veut hériter de leur bénédiction doit restaurer ce critère. Une communauté où la richesse remplace la droiture comme critère de noblesse a trahi ses fondations.</p>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- SECTION IX : L'ARROGANCE — LE POISON -->
+<!-- ============================================ -->
+<section id="arrogance">
+  <div class="section-header">
+    <span class="section-number">IX — Le poison de l'arrogance</span>
+    <h2 class="section-title">Quand la richesse <em>détruit la bénédiction</em></h2>
+    <div class="divider"></div>
+  </div>
+
+  <div class="prose">
+    <p>Le conférencier conclut par un avertissement direct et sans ambiguïté : l'arrogance matérielle est le poison qui détruit la bénédiction (<em>baraka</em>). Il décrit un phénomène contemporain précis : certains, ayant acquis richesse ou statut social, adoptent un comportement hautain envers leur propre guide spirituel — parfois leur propre père.</p>
+  </div>
+
+  <div class="analysis-grid">
+    <div class="card">
+      <div class="card-label">Le bon usage de la richesse</div>
+      <h3>Élever le spirituel par le matériel</h3>
+      <p>Certains, par la grâce de Dieu, utilisent leurs acquis pour honorer leur guide, reconnaissant que c'est grâce à lui qu'ils ont obtenu leur réussite. Ils <strong>mettent le matériel au service du spirituel</strong>.</p>
+    </div>
+    <div class="card">
+      <div class="card-label">Le mauvais usage de la richesse</div>
+      <h3>L'arrogance qui exclut la baraka</h3>
+      <p>D'autres affichent un comportement hautain devant leur guide. « La prétendue quête de bénédiction cède la place à l'arrogance... un manque de retenue qui <strong>exclut toute forme de bénédiction</strong> ! »</p>
+    </div>
+  </div>
+
+  <div class="arabic-block">
+    <div class="arabic-text">لَا يَدْخُلُ الْجَنَّةَ مَنْ كَانَ فِي قَلْبِهِ مِثْقَالُ ذَرَّةٍ مِنْ كِبْرٍ</div>
+    <div class="translation">« N'entrera pas au Paradis celui qui a dans son cœur le poids d'un atome d'orgueil »</div>
+    <div class="reference">Hadith — Rapporté par Muslim (91), d'après 'Abd Allāh ibn Mas'ūd</div>
+  </div>
+
+  <div class="chart-container">
+    <h4>Richesse + Humilité vs Richesse + Arrogance</h4>
+    <p class="chart-subtitle">L'impact du rapport à la richesse sur la baraka (bénédiction) spirituelle</p>
+    <div class="chart-canvas-wrapper">
+      <canvas id="chart-arrogance"></canvas>
+    </div>
+  </div>
+
+  <div class="lesson-box">
+    <h4>Leçon à retenir</h4>
+    <p>La bénédiction (baraka) n'est pas un droit héréditaire — c'est un flux qui exige l'humilité pour circuler. Les anciens de Tayba « ne connaissaient pas cette arrogance ». Quiconque se présente devant son guide spirituel avec hauteur et ostentation a déjà fermé la porte par laquelle la baraka devait entrer.</p>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- SECTION X : SYNTHÈSE DES LEÇONS -->
+<!-- ============================================ -->
+<section id="synthese">
+  <div class="section-header">
+    <span class="section-number">X — Synthèse</span>
+    <h2 class="section-title">Les <em>sept leçons</em> de la conférence</h2>
+    <div class="divider"></div>
+  </div>
+
+  <div class="data-table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th style="width:40px">#</th>
+          <th>Leçon</th>
+          <th>Fondement</th>
+          <th>Action concrète</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="number">1</td>
+          <td><strong>Le souvenir des saints est une injonction coranique</strong></td>
+          <td>Coran 14:5, 12:111</td>
+          <td>Participer aux journées de commémoration avec l'intention d'apprendre, pas seulement de célébrer</td>
+        </tr>
+        <tr>
+          <td class="number">2</td>
+          <td><strong>L'Himma est la méthode prescrite par le Prophète ﷺ</strong></td>
+          <td>Directive prophétique à Mbacké Cayor</td>
+          <td>Cultiver l'ambition spirituelle : ne jamais se croire indigne d'atteindre les plus hauts rangs</td>
+        </tr>
+        <tr>
+          <td class="number">3</td>
+          <td><strong>Le savoir sans Himma peut devenir un poison</strong></td>
+          <td>Coran 45:23, 35:28</td>
+          <td>Accompagner toute acquisition de savoir d'une purification de l'intention et du cœur</td>
+        </tr>
+        <tr>
+          <td class="number">4</td>
+          <td><strong>La fraternité spirituelle est un pilier du cheminement</strong></td>
+          <td>Coran 49:10 + 10 principes du Sālik</td>
+          <td>S'entourer de frères sincères qui partagent de hautes ambitions — quitter les cercles qui tirent vers le bas</td>
+        </tr>
+        <tr>
+          <td class="number">5</td>
+          <td><strong>Dépasser ses ancêtres est un devoir, pas une option</strong></td>
+          <td>Khadimou Rassoul</td>
+          <td>Ne jamais se reposer sur l'héritage passé — redoubler d'efforts pour que les ancêtres soient fiers</td>
+        </tr>
+        <tr>
+          <td class="number">6</td>
+          <td><strong>Face à la Fitna, revenir aux sources</strong></td>
+          <td>Modèle de Tayba</td>
+          <td>Quand on perd la direction, retourner au Coran, à la Sunna et aux écrits de Serigne Touba</td>
+        </tr>
+        <tr>
+          <td class="number">7</td>
+          <td><strong>L'arrogance détruit la baraka</strong></td>
+          <td>Muslim (91)</td>
+          <td>La richesse doit servir à honorer le spirituel — jamais à le dominer. L'humilité est la porte de la bénédiction.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="chart-container">
+    <h4>Vue d'ensemble : les 7 leçons et leurs niveaux d'impact</h4>
+    <p class="chart-subtitle">Chaque leçon agit sur un ou plusieurs niveaux de la vie du croyant</p>
+    <div class="chart-canvas-wrapper">
+      <canvas id="chart-synthese"></canvas>
+    </div>
+  </div>
+</section>
+
+</div><!-- end content-wrapper -->
+
+<!-- ============================================ -->
+<!-- SECTION VIDEO -->
+<!-- ============================================ -->
+<section id="video" style="background:var(--ink);padding:4rem 2rem;">
+  <div style="max-width:900px;margin:0 auto;text-align:center;">
+    <span class="section-number" style="color:var(--gold-light);">Conférence Originale</span>
+    <h2 class="section-title" style="color:var(--parchment);margin-bottom:2rem;">Écouter la conférence de <em style="color:var(--gold);">Serigne Khadim Syll</em></h2>
+    <div class="divider" style="margin-bottom:2rem;"></div>
+    <a href="https://www.youtube.com/watch?v=CPaBE4hAXQU" target="_blank" rel="noopener" 
+       style="display:block;position:relative;overflow:hidden;border:2px solid var(--gold);border-radius:2px;text-decoration:none;max-width:800px;margin:0 auto;">
+      <img src="https://img.youtube.com/vi/CPaBE4hAXQU/maxresdefault.jpg" 
+           alt="Conférence de Serigne Khadim Syll — Al-Himma"
+           style="width:100%;display:block;opacity:0.7;transition:opacity 0.3s;"
+           onerror="this.src='https://img.youtube.com/vi/CPaBE4hAXQU/hqdefault.jpg'"
+           onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='0.7'">
+      <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:80px;height:80px;background:rgba(201,163,81,0.9);border-radius:50%;display:flex;align-items:center;justify-content:center;">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1A1612" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+      </div>
+      <div style="position:absolute;bottom:0;left:0;right:0;padding:1.5rem;background:linear-gradient(transparent,rgba(26,22,18,0.9));">
+        <p style="color:var(--gold);font-size:1.1rem;font-weight:600;margin:0;">▶ Regarder sur YouTube</p>
+        <p style="color:var(--parchment-dark);font-size:0.9rem;margin:0.3rem 0 0;">Serigne Khadim Syll — Al-Himma — Journée Serigne Massamba Asta</p>
+      </div>
+    </a>
+    <p style="color:var(--gold-light);margin-top:1.5rem;font-style:italic;font-size:1.05rem;">Journée dédiée à Serigne Massamba Asta — Tayba Serigne Mbiriina</p>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- FOOTER -->
+<!-- ============================================ -->
+<footer>
+  <div class="footer-verse">وَذَكِّرْهُم بِأَيَّامِ اللَّهِ</div>
+  <p>« Et rappelle-leur les jours d'Allah »</p>
+  <div style="width:60px;height:1px;background:var(--gold);margin:2rem auto;"></div>
+  <p style="opacity:0.5;font-size:0.85rem;">Analyse réalisée à partir de la conférence de Serigne Khadim Syll sur Al-Himma<br>Journée dédiée à Serigne Massamba Asta — Tayba Serigne Mbiriina</p>
+  <div style="margin-top:2.5rem;padding-top:2rem;border-top:1px solid rgba(201,163,81,0.15);">
+    <p style="font-size:0.95rem;color:var(--gold-light);margin-bottom:0.5rem;">Talibé exécutant : <a href="https://www.issatoure.com" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:underline;font-weight:600;">Inssa TOURÉ</a></p>
+    <p style="font-size:0.85rem;opacity:0.6;">
+      <a href="mailto:diguifils@gmail.com" style="color:var(--gold-light);text-decoration:none;">diguifils@gmail.com</a>
+    </p>
+    <p style="font-size:0.8rem;opacity:0.4;margin-top:1rem;">Merci de me contacter pour toute information ou correction</p>
+  </div>
+</footer>
+
+<!-- ============================================ -->
+<!-- CHARTS -->
+<!-- ============================================ -->
+<script>
+const gold = '#C9A351';
+const goldLight = '#E8D5A3';
+const emerald = '#1B6B4A';
+const emeraldDark = '#0D4A30';
+const burgundy = '#6B1D2A';
+const ink = '#1A1612';
+const sacredBlue = '#1A3A5C';
+
+Chart.defaults.font.family = "'Cormorant Garamond', Georgia, serif";
+Chart.defaults.font.size = 14;
+Chart.defaults.color = '#4A433A';
+
+// CHART 1: Cosmos — Double relation saint/terre/ciel
+new Chart(document.getElementById('chart-cosmos'), {
+  type: 'bar',
+  data: {
+    labels: ['Prosternations\n(Terre)', 'Prières nocturnes\n(Terre)', 'Invocations\n(Terre)', 'Lumières montantes\n(Ciel)', 'Anges transporteurs\n(Ciel)', 'Portes d\'ascension\n(Ciel)'],
+    datasets: [{
+      label: 'Du vivant du saint',
+      data: [95, 90, 85, 90, 88, 92],
+      backgroundColor: emerald,
+      borderRadius: 2
+    }, {
+      label: 'Après sa mort',
+      data: [10, 5, 8, 5, 8, 3],
+      backgroundColor: burgundy,
+      borderRadius: 2
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: true,
+    plugins: {
+      legend: { position: 'bottom', labels: { padding: 14, font: { size: 12 } } }
+    },
+    scales: {
+      y: { beginAtZero: true, max: 100, grid: { color: 'rgba(0,0,0,0.05)' },
+        title: { display: true, text: 'Intensité spirituelle (conceptuelle)', font: { size: 11, style: 'italic' } }
+      },
+      x: { grid: { display: false }, ticks: { font: { size: 10 }, maxRotation: 30 } }
+    }
+  }
+});
+
+// CHART 2: 'Ilm vs Himma
+new Chart(document.getElementById('chart-ilm-himma'), {
+  type: 'line',
+  data: {
+    labels: ['Début', 'Acquisition du savoir', 'Maîtrise', 'Maturité', 'Aboutissement'],
+    datasets: [{
+      label: 'Savoir seul (\'Ilm sans Himma)',
+      data: [10, 50, 70, 60, 30],
+      borderColor: burgundy,
+      backgroundColor: 'rgba(107,29,42,0.08)',
+      fill: true, tension: 0.4,
+      pointRadius: 5, pointBackgroundColor: burgundy
+    }, {
+      label: 'Savoir + Himma',
+      data: [10, 50, 75, 90, 100],
+      borderColor: emerald,
+      backgroundColor: 'rgba(27,107,74,0.08)',
+      fill: true, tension: 0.4,
+      pointRadius: 5, pointBackgroundColor: emerald
+    }, {
+      label: 'Himma seule (sans savoir structuré)',
+      data: [10, 30, 50, 65, 80],
+      borderColor: gold,
+      backgroundColor: 'rgba(201,163,81,0.08)',
+      fill: true, tension: 0.4,
+      pointRadius: 5, pointBackgroundColor: gold,
+      borderDash: [5, 5]
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: true,
+    plugins: {
+      legend: { position: 'bottom', labels: { padding: 14, font: { size: 12 } } }
+    },
+    scales: {
+      y: { beginAtZero: true, max: 110, grid: { color: 'rgba(0,0,0,0.05)' },
+        title: { display: true, text: 'Élévation spirituelle', font: { size: 11, style: 'italic' } }
+      },
+      x: { grid: { display: false } }
+    }
+  }
+});
+
+// CHART 3: 4 piliers de la fraternité
+new Chart(document.getElementById('chart-piliers'), {
+  type: 'radar',
+  data: {
+    labels: ['Ikhwān\n(Fraternité)', 'Himam\n(Aspirations)', 'Ṣidq\n(Véracité)', 'Ikhlāṣ\n(Sincérité)'],
+    datasets: [{
+      label: 'Idéal prescrit par Khadimou Rassoul',
+      data: [10, 10, 10, 10],
+      backgroundColor: 'rgba(201,163,81,0.15)',
+      borderColor: gold, borderWidth: 2,
+      pointBackgroundColor: gold, pointRadius: 6
+    }, {
+      label: 'Fraternité mondaine typique',
+      data: [6, 3, 4, 2],
+      backgroundColor: 'rgba(107,29,42,0.1)',
+      borderColor: burgundy, borderWidth: 2,
+      pointBackgroundColor: burgundy, pointRadius: 5
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: true,
+    scales: {
+      r: { beginAtZero: true, max: 10, ticks: { stepSize: 2, font: { size: 10 } },
+        pointLabels: { font: { size: 12 } }, grid: { color: 'rgba(0,0,0,0.08)' }
+      }
+    },
+    plugins: {
+      legend: { position: 'bottom', labels: { padding: 14, font: { size: 12 } } }
+    }
+  }
+});
+
+// CHART 4: Trajectoires face à l'héritage
+new Chart(document.getElementById('chart-trajectoires'), {
+  type: 'line',
+  data: {
+    labels: ['Ancêtres', 'Génération 1', 'Génération 2', 'Génération 3', 'Génération 4'],
+    datasets: [{
+      label: 'Progression (Himma élevée)',
+      data: [70, 78, 88, 95, 100],
+      borderColor: emerald, backgroundColor: 'rgba(27,107,74,0.08)',
+      fill: false, tension: 0.3,
+      pointRadius: 6, pointBackgroundColor: emerald
+    }, {
+      label: 'Stagnation (Himma absente)',
+      data: [70, 68, 65, 62, 58],
+      borderColor: gold, backgroundColor: 'rgba(201,163,81,0.08)',
+      fill: false, tension: 0.3,
+      pointRadius: 6, pointBackgroundColor: gold,
+      borderDash: [5, 5]
+    }, {
+      label: 'Régression (Arrogance)',
+      data: [70, 55, 40, 25, 10],
+      borderColor: burgundy, backgroundColor: 'rgba(107,29,42,0.08)',
+      fill: false, tension: 0.3,
+      pointRadius: 6, pointBackgroundColor: burgundy,
+      borderDash: [2, 3]
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: true,
+    plugins: {
+      legend: { position: 'bottom', labels: { padding: 14, font: { size: 12 } } }
+    },
+    scales: {
+      y: { beginAtZero: true, max: 110, grid: { color: 'rgba(0,0,0,0.05)' },
+        title: { display: true, text: 'Capital spirituel', font: { size: 11, style: 'italic' } }
+      },
+      x: { grid: { display: false } }
+    }
+  }
+});
+
+// CHART 5: Fitna protection circles
+new Chart(document.getElementById('chart-fitna'), {
+  type: 'polarArea',
+  data: {
+    labels: ['Confusion doctrinale', 'Perte de direction', 'Arrogance matérielle', 'Inversion des valeurs'],
+    datasets: [{
+      data: [85, 75, 90, 80],
+      backgroundColor: [
+        'rgba(107,29,42,0.6)',
+        'rgba(26,58,92,0.6)',
+        'rgba(139,111,46,0.6)',
+        'rgba(26,22,18,0.5)'
+      ],
+      borderWidth: 2, borderColor: '#FAF7F0'
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: true,
+    plugins: {
+      legend: { position: 'bottom', labels: { padding: 16, font: { size: 12 } } },
+      title: { display: true, text: 'Niveau de danger de chaque Fitna (conceptuel)', font: { size: 13, style: 'italic' }, padding: { bottom: 10 } }
+    },
+    scales: {
+      r: { ticks: { display: false }, grid: { color: 'rgba(0,0,0,0.06)' } }
+    }
+  }
+});
+
+// CHART 6: Arrogance vs Humilité
+new Chart(document.getElementById('chart-arrogance'), {
+  type: 'bar',
+  data: {
+    labels: ['Richesse + Humilité', 'Richesse + Arrogance'],
+    datasets: [
+      { label: 'Baraka reçue', data: [95, 5], backgroundColor: emerald, borderRadius: 2 },
+      { label: 'Proximité avec le guide', data: [90, 10], backgroundColor: gold, borderRadius: 2 },
+      { label: 'Bénéfice spirituel', data: [100, 0], backgroundColor: sacredBlue, borderRadius: 2 }
+    ]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: true,
+    plugins: {
+      legend: { position: 'bottom', labels: { padding: 14, font: { size: 12 } } }
+    },
+    scales: {
+      y: { beginAtZero: true, max: 100, grid: { color: 'rgba(0,0,0,0.05)' },
+        title: { display: true, text: 'Intensité (conceptuelle)', font: { size: 11, style: 'italic' } }
+      },
+      x: { grid: { display: false } }
+    }
+  }
+});
+
+// CHART 7: Synthèse radar
+new Chart(document.getElementById('chart-synthese'), {
+  type: 'radar',
+  data: {
+    labels: ['Foi (Īmān)', 'Savoir (\'Ilm)', 'Aspiration (Himma)', 'Fraternité (Ukhuwwa)', 'Humilité (Tawāḍu\')', 'Action (\'Amal)', 'Héritage (Wirātha)'],
+    datasets: [{
+      label: 'Impact des 7 leçons combinées',
+      data: [9, 8, 10, 9, 10, 9, 8],
+      backgroundColor: 'rgba(27,107,74,0.12)',
+      borderColor: emerald, borderWidth: 2,
+      pointBackgroundColor: emerald, pointRadius: 5
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: true,
+    scales: {
+      r: { beginAtZero: true, max: 10, ticks: { stepSize: 2, font: { size: 10 } },
+        pointLabels: { font: { size: 11 } }, grid: { color: 'rgba(0,0,0,0.08)' }
+      }
+    },
+    plugins: { legend: { display: false } }
+    }
+});
+</script>
+
+</body>
+</html>
