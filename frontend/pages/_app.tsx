@@ -32,7 +32,7 @@ const url = 'https://issatoure.com';
       <DefaultSeo
         title={title}
         description={description}
-        canonical="https://bryantcodes.art"
+        canonical={url}
         openGraph={{
           url,
           title,

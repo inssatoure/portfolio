@@ -7,7 +7,7 @@ import {
 } from 'three';
 // @ts-ignore
 import glsl from 'glslify';
-import { Project } from '../generatedSanitySchemaTypes';
+import { Project } from './SiteData';
 import { useBreakpoints } from './useBreakpoints';
 // import colors from './colors';
 
