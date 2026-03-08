@@ -143,20 +143,6 @@ function extractBodyContent(html: string): string {
     .replace(/< /html>/gi, "")
     .replace(/< head>[\s\S]*?</head>/gi, "");
 }
-  // Extract content from <body> tag if it exists
-  const bodyMatch = html.match(/<body[^>]*>([\s\S]*?)<\/body>/i);
-  if (bodyMatch) {
-    return bodyMatch[1];
-  }
-  // If no body tag, remove DOCTYPE, html, head tags
-  let content = html
-    .replace(/<!DOCTYPE[^>]*>/i, '')
-    .replace(/<html[^>]*>/i, '')
-    .replace(/<\/html>/i, '')
-    .replace(/<head>[\s\S]*?<\/head>/i, '');
-  return content;
-}
-
 export async function getStaticProps({ params }: { params: { slug: string } }) {
   const post = blogPosts.find((p) => p.slug === params.slug);
 
