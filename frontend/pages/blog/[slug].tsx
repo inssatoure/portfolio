@@ -124,6 +124,25 @@ export async function getStaticPaths() {
 }
 
 function extractBodyContent(html: string): string {
+  try {
+    const bodyStart = html.indexOf("<body");
+    if (bodyStart !== -1) {
+      const bodyTagEnd = html.indexOf(">", bodyStart);
+      const bodyContentStart = bodyTagEnd + 1;
+      const bodyEnd = html.lastIndexOf("</body>");
+      if (bodyEnd !== -1) {
+        return html.substring(bodyContentStart, bodyEnd);
+      }
+    }
+  } catch (e) {
+    console.warn("Could not extract body content:", e);
+  }
+  return html
+    .replace(/<!DOCTYPE[^>]*>/gi, "")
+    .replace(/< html[^>]*>/gi, "")
+    .replace(/< /html>/gi, "")
+    .replace(/< head>[\s\S]*?</head>/gi, "");
+}
   // Extract content from <body> tag if it exists
   const bodyMatch = html.match(/<body[^>]*>([\s\S]*?)<\/body>/i);
   if (bodyMatch) {
