@@ -8,20 +8,7 @@ import {
 import { CustomCursorHover } from './CustomCursor';
 import { useBreakpoints } from './useBreakpoints';
 import { useScrolledToBottom } from './useScrolledToBottom';
-
-interface Project {
-  _id: string;
-  _type: string;
-  title: string;
-  slug: { current: string };
-  body: any;
-  mainImage: any;
-  repoLink?: string;
-  liveLink?: string;
-  tags?: string[];
-  order?: number;
-  color1?: string;
-}
+import { Project } from './SiteData';
 
 export const CloseButton = ({ setOpen }: { setOpen: (_open: boolean) => void; }) => {
   const breakpoints = useBreakpoints();

@@ -61,7 +61,7 @@ export function Notebook({ ...groupProps }:GroupProps) {
         font={fontUrls.setalBold}
         visible={linesVisible}
       >
-        {'BLOG'}
+        BLOG
       </Text>
     </animated.group>
   );

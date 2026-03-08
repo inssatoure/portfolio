@@ -9,10 +9,11 @@ export interface SanityColor {
 }
 
 export interface Project {
+  _id?: string;
   _type: 'project';
   title: string;
   shortTitle?: string;
-  slug: { current: string };
+  slug: { _type?: string; current: string };
   subTitle?: string;
   client?: string;
   designers?: Array<{ _type: string; name?: string; url?: string }>;

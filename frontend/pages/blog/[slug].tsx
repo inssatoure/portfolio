@@ -1,3 +1,4 @@
+import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import fs from 'fs';
@@ -14,21 +15,17 @@ export default function BlogArticle({ post, htmlContent }: BlogArticleProps) {
     <>
       <Head>
         <title>{post.title} | Blog</title>
-        <meta name="description" content={post.description} />
+        <meta
+          name="description"
+          content={post.description}
+        />
       </Head>
       <div style={{ minHeight: '100vh', backgroundColor: '#ffffff', overflow: 'auto' }}>
         <style>{`
           * { margin: 0; padding: 0; box-sizing: border-box; }
           body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
-          .blog-content {
-            font-size: 16px;
-            line-height: 1.8;
-            color: #333;
-          }
-          .blog-content h1, .blog-content h2, .blog-content h3 {
-            margin: 40px 0 20px 0;
-            font-weight: 700;
-          }
+          .blog-content { font-size: 16px; line-height: 1.8; color: #333; }
+          .blog-content h1, .blog-content h2, .blog-content h3 { margin: 40px 0 20px 0; font-weight: 700; }
           .blog-content h1 { font-size: 32px; }
           .blog-content h2 { font-size: 24px; }
           .blog-content h3 { font-size: 20px; }
@@ -44,7 +41,10 @@ export default function BlogArticle({ post, htmlContent }: BlogArticleProps) {
         `}</style>
 
         <div style={{ maxWidth: '700px', margin: '0 auto', padding: '60px 20px' }}>
-          <Link href="/blog" style={{ color: '#ff00ff', textDecoration: 'none', fontSize: '14px', fontWeight: 'bold' }}>
+          <Link
+            href="/blog"
+            style={{ color: '#ff00ff', textDecoration: 'none', fontSize: '14px', fontWeight: 'bold' }}
+          >
             &larr; Retour au blog
           </Link>
 
@@ -57,13 +57,17 @@ export default function BlogArticle({ post, htmlContent }: BlogArticleProps) {
 
           <div style={{ height: '2px', background: '#ff00ff', margin: '40px 0' }} />
 
+          {/* eslint-disable-next-line react/no-danger */}
           <article
             className="blog-content"
             dangerouslySetInnerHTML={{ __html: htmlContent }}
           />
 
           <div style={{ marginTop: '60px', paddingTop: '30px', borderTop: '1px solid #eee' }}>
-            <Link href="/blog" style={{ color: '#ff00ff', textDecoration: 'none', fontWeight: 'bold' }}>
+            <Link
+              href="/blog"
+              style={{ color: '#ff00ff', textDecoration: 'none', fontWeight: 'bold' }}
+            >
               &larr; Voir tous les articles
             </Link>
           </div>
@@ -85,7 +89,7 @@ function extractBodyContent(html: string): string {
   if (bodyStart !== -1) {
     const bodyTagEnd = html.indexOf('>', bodyStart);
     if (bodyTagEnd !== -1) {
-      const bodyEnd = html.indexOf('<\/body>', bodyTagEnd);
+      const bodyEnd = html.indexOf('</body>', bodyTagEnd);
       if (bodyEnd !== -1) {
         return html.substring(bodyTagEnd + 1, bodyEnd);
       }
@@ -100,13 +104,13 @@ export async function getStaticProps({ params }: { params: { slug: string } }) {
     return { notFound: true };
   }
 
-  const filePath = path.join(process.cwd(), 'content', 'blog', params.slug + '.html');
+  const filePath = path.join(process.cwd(), 'content', 'blog', `${params.slug}.html`);
 
   let htmlContent = '';
   try {
     const rawHtml = fs.readFileSync(filePath, 'utf-8');
     htmlContent = extractBodyContent(rawHtml);
-  } catch (e) {
+  } catch (_e) {
     return { notFound: true };
   }
 

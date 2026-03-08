@@ -136,7 +136,7 @@ export function CoffeeCup() {
         position={[0, 0, 0]}
         width={2}
         height={2}
-        description={'A coffee mug with the word "Projects" on it.'}
+        description='A coffee mug with the word "Projects" on it.'
         activationMsg="Mug tips, coffee spills everywhere, a project carousel animates into view from the 3d floating liquid."
         onFocus={() => setHovering(true)}
         onBlur={() => setHovering(false)}
@@ -149,7 +149,7 @@ export function CoffeeCup() {
         position={[0, 0, 0]}
         width={1.5}
         height={1.5}
-        description={'A spilled coffee mug with the word "Back" on it'}
+        description='A spilled coffee mug with the word "Back" on it'
         activationMsg="Coffee unspills, returning us to the desk / main menu."
         onFocus={() => setHovering(true)}
         onBlur={() => setHovering(false)}

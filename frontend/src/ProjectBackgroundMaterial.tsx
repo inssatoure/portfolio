@@ -228,9 +228,10 @@ export const BackgroundColorMaterial = ({ opacity = true, project = null }:
 
   const breakpoints = useBreakpoints();
 
-  const projectColor:[number, number, number] = project !== null
-    ? rgbToGlsl(project?.color1?.rgb)
-    : null ?? ([0.333, 0.122, 0.0]);
+  const rgb = project?.color1?.rgb;
+  const projectColor:[number, number, number] = project !== null && rgb
+    ? rgbToGlsl({ r: rgb.r, g: rgb.g, b: rgb.b })
+    : [0.333, 0.122, 0.0];
 
   const opacityClock = useMemo(() => {
     const clock = new Clock();

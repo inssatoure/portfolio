@@ -50,6 +50,9 @@
     "usehooks-ts": "^2.6.0",
     "zustand": "^4.1.1"
   },
+  "resolutions": {
+    "three-mesh-bvh": "0.5.24"
+  },
   "devDependencies": {
     "@babel/core": "^7.18.10",
     "@portabletext/types": "^1.0.3",

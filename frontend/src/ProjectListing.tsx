@@ -15,20 +15,7 @@ import { useHasNoMouse } from './useHasNoMouse';
 import { useSceneController } from './SceneController';
 import { fontUrls } from './typography';
 import { BackgroundColorMaterial } from './ProjectBackgroundMaterial';
-
-interface Project {
-  _id: string;
-  _type: string;
-  title: string;
-  slug: { current: string };
-  body: any;
-  mainImage: any;
-  repoLink?: string;
-  liveLink?: string;
-  tags?: string[];
-  order?: number;
-  color1?: string;
-}
+import { Project } from './SiteData';
 
 export function ProjectListing({ active, projects, ...groupProps }:
   { active:boolean, projects: Project[] | null; } & GroupProps) {
